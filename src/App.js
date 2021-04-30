@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { Nav, Navbar, NavLink } from "react-bootstrap";
+import Main from "./reusableComponents/headers/mainHeader";
+import {
+  faHome,
+  faList,
+  faPlus,
+  faSignInAlt,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Helmet from "react-helmet";
+import Navigation from "./reusableComponents/headers/NavBar";
+import Common from "./reusableComponents/Common";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Helmet>
+        <title>E-Commerce-Portal</title>
+      </Helmet>
+      <Router>
+        <Main />
+        <Navigation />
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/menfashion">
+          <Common title="Men's fashion page" />
+        </Route>
+        <Route path="/womenfashion">
+          <Common title="Women's fashion page" />
+        </Route>
+        <Route path="/electronics">
+          <Common title="Electronics page" />
+        </Route>
+      </Router>
     </div>
   );
 }
