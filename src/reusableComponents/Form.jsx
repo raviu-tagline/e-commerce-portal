@@ -1,15 +1,16 @@
 import { useForm } from "react-hook-form";
 import { Form, Input } from "reactstrap";
 import yupValidation from "../reusableContents/yupValidation";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const Forms = ({ content, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(yupValidation),
+    resolver: yupResolver(yupValidation()),
   });
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {content.inputs.map((key, val) => {
+      {content.inputs.map((key) => {
         return (
           <>
             <label for={key.name} className="form-label">

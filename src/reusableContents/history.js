@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-const history = (props) => {
+const History = (props) => {
   let past = useHistory();
 
   useEffect(() => {
@@ -11,4 +11,4 @@ const history = (props) => {
   return <></>;
 };
 
-export default history;
+export default History;
