@@ -1,22 +1,37 @@
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-const axiosApi = (method, urlEndpoint, data, isToken = false) =>
+// , data, isToken = false
+
+const axiosApi = (method, endpoint, data, isToken) =>
   new Promise((resolve, reject) => {
     let headers = {};
-    const history = useHistory();
+    const history = useHistory;
     if (isToken) {
       headers = {
-        "access-token": JSON.parse(localStorage.getItem("token")),
+        "access-token": localStorage.getItem("token"),
+        "Content-type": "application/json",
       };
     }
+
+    console.log(data);
+
+    console.log("url -- ", process.env.REACT_APP_LOCAL_API_URL);
+    console.log("last -- ", endpoint);
+
     axios({
       method,
-      url: process.env.REACT_APP_URL + urlEndpoint,
+      url: process.env.REACT_APP_LOCAL_API_URL + endpoint,
       data,
       headers,
     })
-      .then((response) => {
+      .then(function (response) {
+        if (response.data.statusCode === 401) {
+          return localStorage.removeItem("token");
+        }
+
+        console.log(response);
+
         return resolve({
           data: response.data,
           statusCode: response.status,

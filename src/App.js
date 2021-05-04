@@ -15,6 +15,8 @@ import Login from "./components/Login";
 import Helmet from "react-helmet";
 import Navigation from "./reusableComponents/headers/NavBar";
 import Common from "./reusableComponents/Common";
+import Register from "./components/Register";
+import "./custom.css";
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/create">
+          <Register />
         </Route>
         <Route path="/menfashion">
           <Common title="Men's fashion page" />

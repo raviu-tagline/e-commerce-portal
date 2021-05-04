@@ -1,0 +1,22 @@
+{
+  "login": [
+    {
+      "username": "admin@admin.com",
+      "password": "123456789"
+    }
+  ],
+  "register": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ]
+}

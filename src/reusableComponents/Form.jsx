@@ -9,27 +9,31 @@ const Forms = ({ content, onSubmit }) => {
   });
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      {content.inputs.map((key) => {
+    <Form onSubmit={onSubmit}>
+      {content.inputs.map((s, key) => {
         return (
-          <>
-            <label for={key.name} className="form-label">
-              {key.label}
-            </label>
+          <div className="form-group">
             <input
-              name={key.name}
-              type={key.type}
-              value={key.value}
-              ref={register}
-              classNam="form-control"
-              placeholder={key.placeholder}
-              id={key.name}
+              name={s.name}
+              type={s.type}
+              value={s.value}
+              {...register("register", { required: true })}
+              className="form-control"
+              id={s.name}
+              placeholder={s.placeholder}
+              aria-describedby={s.name}
             />
-            <p style={{ color: "red" }}>{errors[key.name]?.message}</p>
-          </>
+            <p style={{ color: "red" }}>
+              {errors ? errors[s.name]?.message : ""}
+            </p>
+          </div>
         );
       })}
-      <Input type="submit" value="submit" classNam="btn btn-primary" />
+      <Input
+        type="submit"
+        value="Submit"
+        className="form-control btn btn-primary font-weight-bold"
+      />
     </Form>
   );
 };
