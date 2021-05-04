@@ -1,22 +1,13 @@
 {
-  "login": [
-    {
-      "username": "admin@admin.com",
-      "password": "123456789"
-    }
-  ],
   "register": [
     {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
+      "id": 1,
+      "name": "admin",
+      "age": 55,
+      "contact_info": 8989898989,
+      "username": "admin@admin.com",
+      "password": "123456789",
+      "role": "admin"
     }
   ]
 }

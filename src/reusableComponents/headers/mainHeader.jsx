@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavLink, Button } from "react-bootstrap";
-import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProfileImg from "./ProfileImg";
+import imgPath from "../../images/default-avtar.png";
+// import imgPath from "../../../images/default-avtar.png";
 // import logo from "../../../public/logo.png";
 
 const mainHeader = () => {
@@ -22,12 +25,24 @@ const mainHeader = () => {
         <Navbar.Collapse className="justify-content-end">
           <Nav>
             <Nav.Link>
-              <Link to="/login">
-                <Button variant="outline-info">
-                  <FontAwesomeIcon icon={faSignInAlt} />
-                  <strong>&nbsp;Login</strong>
-                </Button>
-              </Link>
+              {localStorage.getItem("user-info") === null ? (
+                <Link to="/login">
+                  <Button variant="outline-info">
+                    <FontAwesomeIcon icon={faSignInAlt} />
+                    <strong>&nbsp;Login</strong>
+                  </Button>
+                </Link>
+              ) : (
+                <>
+                  <ProfileImg path={imgPath} />
+                  <Link to="/logout">
+                    <Button variant="outline-info">
+                      <FontAwesomeIcon icon={faSignOutAlt} />
+                      <strong>&nbsp;Logout</strong>
+                    </Button>
+                  </Link>
+                </>
+              )}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

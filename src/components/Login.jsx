@@ -13,16 +13,47 @@ const Login = (props) => {
 
   console.log(props);
 
-  const onSubmit = async (e, param) => {
-    e.preventDefault();
-    console.log(param);
-
-    const { statusCode, message } = await axiosApi(
+  const onSubmit = async (param) => {
+    console.log(param.email);
+    const { statusCode, data, message } = await axiosApi(
       "get",
-      "login",
-      param,
+      "register?username=" + param.email + "&password=" + param.password,
       false
     );
+
+    if (statusCode === 200 && data.length > 0) {
+      toast.success("login successful", {
+        position: "top-center",
+      });
+      const { token, ...rest } = data;
+
+      // localStorage.setItem("token", token);
+      localStorage.setItem("user-info", JSON.stringify(rest));
+
+      if (rest.role === "admin") {
+        setPath("admin/dashboard");
+      }
+
+      if (rest.role === "supplier") {
+        setPath("supplier/dashboard");
+      }
+
+      if (rest.role === "customer") {
+        setPath("customer/dashboard");
+      }
+
+      // setPath(
+      //   rest.role === "admin"
+      //     ? "admin/dashboard"
+      //     : rest.role === "supplier"
+      //     ? "supplier/dashboard"
+      //     : "customer/dashboard"
+      // );
+
+      setChangePath(true);
+    } else {
+      alert("Check username and password");
+    }
   };
   return (
     <>
@@ -36,9 +67,11 @@ const Login = (props) => {
               <Forms content={loginDesign} onSubmit={(e) => onSubmit(e)} />
               <hr />
               <p className="text-center">
-                <Links className="btn btn-success" to="/create">
-                  <strong>Create new account</strong>
-                </Links>
+                <div className="btn btn-success">
+                  <Links to="/create">
+                    <strong>Create new account</strong>
+                  </Links>
+                </div>
               </p>
             </div>
           </div>

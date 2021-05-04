@@ -11,16 +11,20 @@ const Register = () => {
   const [changePath, setChangePath] = useState(false);
   const [path, setPath] = useState("/");
 
-  const onSubmit = async (e, params) => {
-    e.preventDefault();
-    console.log("data -- ", params);
-
+  const onSubmit = async (params) => {
     const { data, statusCode, message } = await axiosApi(
       "post",
       "register",
       params,
       false
     );
+
+    if (statusCode === 200) {
+      localStorage.setItem("user-info", data);
+      console.log("lcs -- ", localStorage.getItem("user-info"));
+    } else {
+      alert(message);
+    }
   };
 
   return (
@@ -33,7 +37,7 @@ const Register = () => {
             </div>
 
             <div className="card-body">
-              <Forms content={registerDesign} onSubmit={(e) => onSubmit(e)} />
+              <Forms content={registerDesign} onSubmit={onSubmit} />
               <hr />
               <p className="text-center">
                 Already have an account? <Links to="/login">Login Here</Links>

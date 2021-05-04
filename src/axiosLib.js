@@ -14,11 +14,6 @@ const axiosApi = (method, endpoint, data, isToken) =>
       };
     }
 
-    console.log(data);
-
-    console.log("url -- ", process.env.REACT_APP_LOCAL_API_URL);
-    console.log("last -- ", endpoint);
-
     axios({
       method,
       url: process.env.REACT_APP_LOCAL_API_URL + endpoint,
@@ -29,8 +24,6 @@ const axiosApi = (method, endpoint, data, isToken) =>
         if (response.data.statusCode === 401) {
           return localStorage.removeItem("token");
         }
-
-        console.log(response);
 
         return resolve({
           data: response.data,

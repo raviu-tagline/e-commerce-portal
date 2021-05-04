@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  Redirect,
+} from "react-router-dom";
 import { Nav, Navbar, NavLink } from "react-bootstrap";
 import Main from "./reusableComponents/headers/mainHeader";
 import {
@@ -17,6 +22,11 @@ import Navigation from "./reusableComponents/headers/NavBar";
 import Common from "./reusableComponents/Common";
 import Register from "./components/Register";
 import "./custom.css";
+import { ToastContainer } from "react-toastify";
+import AdminDash from "./components/Admin/AdminDash";
+import SupplierDash from "./components/Supplier/SupplierDash";
+import CustomerDash from "./components/Customer/CustomerDash";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -26,6 +36,33 @@ function App() {
       </Helmet>
       <Router>
         <Main />
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/logout">
+            {localStorage.clear()}
+            <Redirect to="/login" />
+          </Route>
+          <Route path="/create">
+            <Register />
+          </Route>
+          <ProtectedRoute
+            path="/admin/dashboard"
+            component={AdminDash}
+            role="admin"
+          />
+          <ProtectedRoute
+            path="/supplier/dashboard"
+            component={SupplierDash}
+            role="supplier"
+          />
+          <ProtectedRoute
+            path="/customer/dashboard"
+            component={CustomerDash}
+            role="customer"
+          />
+          {/* <Main />
         <Navigation />
         <Route exact path="/">
           <Home />
@@ -44,7 +81,8 @@ function App() {
         </Route>
         <Route path="/electronics">
           <Common title="Electronics page" />
-        </Route>
+        </Route> */}
+        </Switch>
       </Router>
     </div>
   );
