@@ -28,12 +28,12 @@ const registerDesign = {
     {
       type: "radio",
       name: "role",
-      value: "Supplier",
+      value: "supplier",
     },
     {
       type: "radio",
       name: "role",
-      value: "Customer",
+      value: "customer",
     },
   ],
 };

@@ -4,6 +4,7 @@ import loginDesign from "../reusableContents/loginDesign";
 import Forms from "../reusableComponents/Form";
 import History from "../reusableContents/history";
 import Links from "./Links";
+import { Redirect } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -15,7 +16,11 @@ const Login = (props) => {
     console.log(param.email);
     const { statusCode, data, message } = await axiosApi(
       "get",
-      "register?username=" + param.email + "&password=" + param.password,
+      process.env.REACT_APP_LOCAL_API_URL +
+        "register?email=" +
+        param.email +
+        "&password=" +
+        param.password,
       false
     );
 

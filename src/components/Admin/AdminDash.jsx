@@ -2,8 +2,9 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
+import MainHeader from "../../reusableComponents/headers/mainHeader";
 import NavBar from "../../reusableComponents/headers/NavBar";
-import { NavSidebar } from "../../reusableComponents/headers/NavSidebar";
+import NavSidebar from "../../reusableComponents/headers/NavSidebar";
 import Links from "../Links";
 
 export default class AdminDash extends Component {
@@ -26,8 +27,6 @@ export default class AdminDash extends Component {
   render() {
     return (
       <>
-        {/* <NavBar /> */}
-        <NavSidebar />
         {this.state.data ? (
           <>
             <div className="container">
@@ -55,8 +54,8 @@ export default class AdminDash extends Component {
                             <td>{i + 1}</td>
                             <td>{item.name}</td>
                             <td>{item.age}</td>
-                            <td>{item.contact_info}</td>
-                            <td>{item.username}</td>
+                            <td>{item.number}</td>
+                            <td>{item.email}</td>
                             <td>{item.role}</td>
                             <td>
                               <Links to={"/update/" + item.id}>

@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const [changePath, setChangePath] = useState(false);
-  const [path, setPath] = useState("./create");
+  const [path, setPath] = useState("/");
 
   const onSubmit = async (params) => {
     const { data, statusCode, message } = await axiosApi(
@@ -19,9 +19,10 @@ const Register = () => {
       false
     );
 
-    if (statusCode === 200) {
-      localStorage.setItem("user-info", data);
-      console.log("lcs -- ", localStorage.getItem("user-info"));
+    if (statusCode === 201) {
+      alert("Record created");
+      setPath("/");
+      setChangePath(true);
     } else {
       alert(message);
     }

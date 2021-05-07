@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 // , data, isToken = false
 
-const axiosApi = (method, endpoint, data, isToken) =>
+const axiosApi = (method, apiUrl, data, isToken) =>
   new Promise((resolve, reject) => {
     let headers = {};
     const history = useHistory;
@@ -16,7 +16,7 @@ const axiosApi = (method, endpoint, data, isToken) =>
 
     axios({
       method,
-      url: process.env.REACT_APP_LOCAL_API_URL + endpoint,
+      url: apiUrl,
       data,
       headers,
     })

@@ -1,4 +1,5 @@
 import "./App.css";
+import "./style.css";
 import {
   Switch,
   Route,
@@ -35,7 +36,7 @@ function App() {
         <title>E-Commerce-Portal</title>
       </Helmet>
       <Router>
-        <Main />
+        {/* <Main /> */}
         <Switch>
           <Route exact path="/">
             <Login />
@@ -56,6 +57,13 @@ function App() {
           <Route path="/customer/dashboard">
             <ProtectedRoute component={CustomerDash} role="customer" />
           </Route>
+          <Route path="/home">
+            <ProtectedRoute component={Home} role="" path="/home" />
+          </Route>
+          <Route path="/profile">
+            <ProtectedRoute path=""></ProtectedRoute>
+          </Route>
+
           {/* <Main />
         <Navigation />
         <Route exact path="/">

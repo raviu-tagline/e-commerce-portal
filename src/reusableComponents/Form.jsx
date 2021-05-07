@@ -14,26 +14,38 @@ const Forms = ({ content, onSubmit }) => {
     <Form onSubmit={handleSubmit(onSubmit)}>
       {content.inputs.map((s, key) => {
         return (
-          <div className="form-group">
+          <div
+            className={
+              s.type != "radio"
+                ? "form-group"
+                : "form-check form-check-inline col-5"
+            }
+          >
             <input
               type={s.type}
               value={s.value}
               {...register(s.name, { required: true })}
-              className="form-control"
+              className={
+                s.type != "radio" ? "form-control" : "form-check-input"
+              }
               id={s.name}
               placeholder={s.placeholder}
               aria-describedby={s.name}
             />
-            {/* <p style={{ color: "red" }}>
-              {errors ? errors[s.name]?.message : ""}
-            </p> */}
+            {s.type == "radio" ? (
+              <>
+                <label className="form-check-label">{s.value}</label>
+              </>
+            ) : (
+              ""
+            )}
           </div>
         );
       })}
       <Input
         type="submit"
         value="Submit"
-        className="form-control btn btn-primary font-weight-bold"
+        className="form-control btn btn-primary font-weight-bold mt-3"
       />
     </Form>
 
