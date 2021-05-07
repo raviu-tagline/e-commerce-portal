@@ -2,12 +2,30 @@
   "register": [
     {
       "id": 1,
-      "name": "admin",
+      "name": "Ravi",
       "age": 55,
       "contact_info": 8989898989,
       "username": "admin@admin.com",
       "password": "123456789",
       "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Rudra",
+      "age": 55,
+      "contact_info": 8989898989,
+      "username": "supplier@test.com",
+      "password": "123456789",
+      "role": "supplier"
+    },
+    {
+      "id": 3,
+      "name": "Rakesh",
+      "age": 55,
+      "contact_info": 8989898989,
+      "username": "customer@test.com",
+      "password": "123456789",
+      "role": "customer"
     }
   ]
 }

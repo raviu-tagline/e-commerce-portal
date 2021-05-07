@@ -26,12 +26,14 @@ const mainHeader = () => {
           <Nav>
             <Nav.Link>
               {localStorage.getItem("user-info") === null ? (
-                <Link to="/login">
-                  <Button variant="outline-info">
-                    <FontAwesomeIcon icon={faSignInAlt} />
-                    <strong>&nbsp;Login</strong>
-                  </Button>
-                </Link>
+                <>
+                  <Link to="/">
+                    <Button variant="outline-info">
+                      <FontAwesomeIcon icon={faSignInAlt} />
+                      <strong>&nbsp;Login</strong>
+                    </Button>
+                  </Link>
+                </>
               ) : (
                 <>
                   <ProfileImg path={imgPath} />

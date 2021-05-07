@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 const History = (props) => {
-  let past = useHistory();
+  let history = useHistory();
 
   useEffect(() => {
-    past.push(props.path);
+    console.log("path", props);
+    history.push(props.path);
   }, []);
 
   return <></>;

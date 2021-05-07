@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-const ProtectedRoute = ({ component: Component, role }) => {
+const ProtectedRoute = (props) => {
   const history = useHistory();
-  //   const token = localStorage.getItem("token");
-  const userdata = JSON.parse(localStorage.getItem("user-info"));
-  const Role = userdata.role;
 
-  if (role === Role) {
-    console.log(role, " -- ", Role);
-    return <Component />;
-  } else {
-    return history.goBack();
-  }
+  let Cmp = props.component;
+  let role = props.role;
+  let userData = JSON.stringify(localStorage.getItem("user-info"));
+
+  useEffect(() => {
+    if (!localStorage.getItem("user-info")) {
+      console.log("hello");
+      history.push("/");
+    }
+  }, []);
+  return (
+    <>
+      <Cmp />
+    </>
+  );
 };
 
 export default ProtectedRoute;

@@ -37,31 +37,25 @@ function App() {
       <Router>
         <Main />
         <Switch>
-          <Route path="/login">
+          <Route exact path="/">
             <Login />
           </Route>
-          <Route path="/logout">
+          {/* <Route path="/logout">
             {localStorage.clear()}
             <Redirect to="/login" />
-          </Route>
+          </Route> */}
           <Route path="/create">
             <Register />
           </Route>
-          <ProtectedRoute
-            path="/admin/dashboard"
-            component={AdminDash}
-            role="admin"
-          />
-          <ProtectedRoute
-            path="/supplier/dashboard"
-            component={SupplierDash}
-            role="supplier"
-          />
-          <ProtectedRoute
-            path="/customer/dashboard"
-            component={CustomerDash}
-            role="customer"
-          />
+          <Route path="/admin/dashboard">
+            <ProtectedRoute component={AdminDash} role="admin" />
+          </Route>
+          <Route path="/supplier/dashboard">
+            <ProtectedRoute component={SupplierDash} role="supplier" />
+          </Route>
+          <Route path="/customer/dashboard">
+            <ProtectedRoute component={CustomerDash} role="customer" />
+          </Route>
           {/* <Main />
         <Navigation />
         <Route exact path="/">

@@ -11,8 +11,6 @@ const Login = (props) => {
   const [changePath, setChangePath] = useState(false);
   const [path, setPath] = useState("/");
 
-  console.log(props);
-
   const onSubmit = async (param) => {
     console.log(param.email);
     const { statusCode, data, message } = await axiosApi(
@@ -25,30 +23,25 @@ const Login = (props) => {
       toast.success("login successful", {
         position: "top-center",
       });
-      const { token, ...rest } = data;
+
+      const rest = { ...data };
 
       // localStorage.setItem("token", token);
-      localStorage.setItem("user-info", JSON.stringify(rest));
+      localStorage.setItem("user-info", JSON.stringify(data));
 
-      if (rest.role === "admin") {
+      // console.log("rest ", rest);
+
+      if (rest[0].role == "admin") {
         setPath("admin/dashboard");
       }
 
-      if (rest.role === "supplier") {
+      if (rest[0].role == "supplier") {
         setPath("supplier/dashboard");
       }
 
-      if (rest.role === "customer") {
+      if (rest[0].role == "customer") {
         setPath("customer/dashboard");
       }
-
-      // setPath(
-      //   rest.role === "admin"
-      //     ? "admin/dashboard"
-      //     : rest.role === "supplier"
-      //     ? "supplier/dashboard"
-      //     : "customer/dashboard"
-      // );
 
       setChangePath(true);
     } else {

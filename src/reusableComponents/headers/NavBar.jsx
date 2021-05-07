@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const NavBar = () => {
   return (
     <>
-      <Navbar expand="lg">
+      <Navbar expand="lg" className="flex-column">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Nav>

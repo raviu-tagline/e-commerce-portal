@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const [changePath, setChangePath] = useState(false);
-  const [path, setPath] = useState("/");
+  const [path, setPath] = useState("./create");
 
   const onSubmit = async (params) => {
     const { data, statusCode, message } = await axiosApi(
@@ -40,7 +40,7 @@ const Register = () => {
               <Forms content={registerDesign} onSubmit={onSubmit} />
               <hr />
               <p className="text-center">
-                Already have an account? <Links to="/login">Login Here</Links>
+                Already have an account? <Links to="/">Login Here</Links>
               </p>
             </div>
           </div>
