@@ -1,11 +1,17 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
-import { CardDeck, CardGroup } from "reactstrap";
+import { Link } from "react-router-dom";
 import axiosApi from "../axiosLib";
 
 const Home = (param) => {
   const [dataArr, setDataArr] = useState();
+  const [item_count, setCount] = useState(0);
+
+  const AddItem = (data) => {
+    setCount(item_count + 1);
+    console.log(data);
+  };
 
   useEffect(() => {
     let response;
@@ -24,31 +30,52 @@ const Home = (param) => {
       }
     }
 
+    console.log("Hello");
+
     fetchApi();
   }, []);
   return (
     <>
       <div className="container">
-        <h1>Home page</h1>
+        <div className="row">
+          <div className="col-9">
+            <h1>Home page</h1>
+          </div>
+          <div className="col-3">
+            <Link to="/cart">
+              <img
+                src={process.env.PUBLIC_URL + "/logo.png"}
+                alt="Add to cart"
+                width="15px"
+                height="15px"
+                style={{ float: "right" }}
+                className="cart-image"
+              />
+            </Link>
+            <div className="count-div">
+              <h6 className="cart-count">
+                {item_count == 0 ? "+" : item_count}
+              </h6>
+            </div>
+          </div>
+        </div>
         <div className="row">
           {dataArr !== undefined
-            ? dataArr.map((e, val) => (
+            ? dataArr.map((data, val) => (
                 <>
                   <div className="col-sm-3 p-3">
                     <Card>
-                      <Card.Img variant="top" src={e.imageUrl} />
+                      <Card.Header>{data.name}</Card.Header>
+                      <Card.Img variant="top" src={data.imageUrl} />
                       <Card.Body>
-                        <Card.Header>{e.name}</Card.Header>
-                        <Card.Subtitle className="mb-2 text-muted">
-                          {e.category}
-                        </Card.Subtitle>
-                        <Card.Text>{e.content}</Card.Text>
+                        <Card.Text>{data.content}</Card.Text>
                         <Button
                           variant="primary"
-                          id={e.id}
-                          data-value={e.price}
+                          id={data.id}
+                          data-value={data.price}
+                          onClick={() => AddItem(data)}
                         >
-                          Buy ${" " + e.price}
+                          Buy ${" " + data.price}
                         </Button>
                       </Card.Body>
                     </Card>

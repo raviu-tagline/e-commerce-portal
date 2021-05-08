@@ -28,6 +28,7 @@ import AdminDash from "./components/Admin/AdminDash";
 import SupplierDash from "./components/Supplier/SupplierDash";
 import CustomerDash from "./components/Customer/CustomerDash";
 import ProtectedRoute from "./ProtectedRoute";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -36,15 +37,10 @@ function App() {
         <title>E-Commerce-Portal</title>
       </Helmet>
       <Router>
-        {/* <Main /> */}
         <Switch>
           <Route exact path="/">
             <Login />
           </Route>
-          {/* <Route path="/logout">
-            {localStorage.clear()}
-            <Redirect to="/login" />
-          </Route> */}
           <Route path="/create">
             <Register />
           </Route>
@@ -58,32 +54,18 @@ function App() {
             <ProtectedRoute component={CustomerDash} role="customer" />
           </Route>
           <Route path="/home">
-            <ProtectedRoute component={Home} role="" path="/home" />
+            <ProtectedRoute component={Home} role="customer" path="/home" />
           </Route>
           <Route path="/profile">
-            <ProtectedRoute path=""></ProtectedRoute>
+            <ProtectedRoute></ProtectedRoute>
           </Route>
-
-          {/* <Main />
-        <Navigation />
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/create">
-          <Register />
-        </Route>
-        <Route path="/menfashion">
-          <Common title="Men's fashion page" />
-        </Route>
-        <Route path="/womenfashion">
-          <Common title="Women's fashion page" />
-        </Route>
-        <Route path="/electronics">
-          <Common title="Electronics page" />
-        </Route> */}
+          <Route path="/cart">
+            <ProtectedRoute
+              component={Cart}
+              role="customer"
+              path="/home"
+            ></ProtectedRoute>
+          </Route>
         </Switch>
       </Router>
     </div>
