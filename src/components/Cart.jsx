@@ -1,6 +1,7 @@
 import React from "react";
 
-const Cart = () => {
+const Cart = (cartData) => {
+  console.log("In cart component -- ", cartData);
   return (
     <>
       <div className="container">

@@ -3,14 +3,18 @@ import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axiosApi from "../axiosLib";
+import Cart from "./Cart";
 
 const Home = (param) => {
   const [dataArr, setDataArr] = useState();
   const [item_count, setCount] = useState(0);
+  const [cartData, setCartData] = useState(null);
 
   const AddItem = (data) => {
     setCount(item_count + 1);
-    console.log(data);
+    setCartData(data);
+    console.log("--- ", cartData);
+    console.log(item_count);
   };
 
   useEffect(() => {
@@ -42,7 +46,7 @@ const Home = (param) => {
             <h1>Home page</h1>
           </div>
           <div className="col-3">
-            <Link to="/cart">
+            <Link to="/cart" params={cartData}>
               <img
                 src={process.env.PUBLIC_URL + "/logo.png"}
                 alt="Add to cart"

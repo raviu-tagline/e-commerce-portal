@@ -23,7 +23,7 @@ const ProtectedRoute = (props) => {
       <MainHeader />
       {path == "/home" ? (
         <>
-          <Cmp />
+          <Cmp data={props.data} />
         </>
       ) : (
         <>
