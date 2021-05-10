@@ -32,3 +32,15 @@ img {
 .count-div h6 {
   color: white;
 }
+
+.remove-cart-btn {
+  padding: 5px 10px;
+  color: #f34a4a;
+}
+
+.remove-cart-btn:hover {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 15%;
+  margin-left: 5px;
+}

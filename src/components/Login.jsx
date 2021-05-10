@@ -25,34 +25,27 @@ const Login = (props) => {
     );
 
     if (statusCode === 200 && data.length > 0) {
-      toast.success("login successful", {
-        position: "top-center",
-      });
+      // toast.success("login successful", {
+      //   position: "top-right",
+      // });
 
       const rest = { ...data };
-
       // localStorage.setItem("token", token);
       localStorage.setItem("user-info", JSON.stringify(data));
-
-      // console.log("rest ", rest);
-
-      if (rest[0].role == "admin") {
-        setPath("admin/dashboard");
-      }
-
-      if (rest[0].role == "supplier") {
-        setPath("supplier/dashboard");
-      }
-
-      if (rest[0].role == "customer") {
-        setPath("customer/dashboard");
-      }
-
+      setPath(rest[0].role + "/dashboard");
       setChangePath(true);
     } else {
       alert("Check username and password");
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("user-info")) {
+      const useData = JSON.parse(localStorage.getItem("user-info"));
+      setPath(useData[0].role + "/dashboard");
+      setChangePath(true);
+    }
+  }, []);
   return (
     <>
       <div className="container">

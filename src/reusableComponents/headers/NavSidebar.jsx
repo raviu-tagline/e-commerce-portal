@@ -1,6 +1,8 @@
 import React from "react";
 import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
 import { Component } from "react";
+import { faInbox, faMailBulk, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class NavSidebar extends Component {
   constructor(props) {
     super(props);
@@ -40,21 +42,23 @@ export default class NavSidebar extends Component {
           created={this.onCreate}
         >
           <div className="sidebar-header header-cover bg-light">
-            <div className="image-container">
-              <div className="sidebar-image"></div>
-            </div>
-            <div style={{ padding: "0 0 5px 0" }}>
-              <a className="sidebar-brand">
-                {this.state.name} <br /> {this.state.username}
-              </a>
-            </div>
+            <a className="sidebar-brand">
+              <p>
+                <FontAwesomeIcon icon={faUser} /> {this.state.name}
+              </p>
+            </a>
+            <a className="sidebar-brand">
+              <p>
+                <FontAwesomeIcon icon={faInbox} /> {this.state.username}
+              </p>
+            </a>
           </div>
           <ul className="nav sidebar-nav">
             {this.state.role == "admin" ? (
               <>
                 <li>
                   <a href="#">
-                    <span className="e-text"> Inbox 1</span>
+                    <span className="e-text"> Manage users</span>
                   </a>
                 </li>
                 <li>

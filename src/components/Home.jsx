@@ -3,19 +3,18 @@ import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axiosApi from "../axiosLib";
+import MainHeader from "../reusableComponents/headers/mainHeader";
+import { addToCartAction } from "../redux/actions/cartActions";
+import { useSelector, useDispatch } from "react-redux";
 import Cart from "./Cart";
 
 const Home = (param) => {
   const [dataArr, setDataArr] = useState();
   const [item_count, setCount] = useState(0);
-  const [cartData, setCartData] = useState(null);
+  const [cartData, setCartData] = useState();
 
-  const AddItem = (data) => {
-    setCount(item_count + 1);
-    setCartData(data);
-    console.log("--- ", cartData);
-    console.log(item_count);
-  };
+  const state = useSelector((state) => state.cartData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let response;
@@ -34,12 +33,31 @@ const Home = (param) => {
       }
     }
 
-    console.log("Hello");
-
     fetchApi();
   }, []);
+
+  const AddItem = (data) => {
+    setCartData([data]);
+    setCount(item_count + 1);
+
+    console.log(cartData);
+
+    fetch("http://localhost:3001/Cart", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartData),
+    });
+  };
+
+  useEffect(() => {
+    if (cartData != undefined) return dispatch(addToCartAction(cartData));
+  }, [cartData]);
+
   return (
     <>
+      <MainHeader />
       <div className="container">
         <div className="row">
           <div className="col-9">
@@ -70,7 +88,7 @@ const Home = (param) => {
                   <div className="col-sm-3 p-3">
                     <Card>
                       <Card.Header>{data.name}</Card.Header>
-                      <Card.Img variant="top" src={data.imageUrl} />
+                      {/* <Card.Img variant="top" src={data.imageUrl} /> */}
                       <Card.Body>
                         <Card.Text>{data.content}</Card.Text>
                         <Button
@@ -79,7 +97,7 @@ const Home = (param) => {
                           data-value={data.price}
                           onClick={() => AddItem(data)}
                         >
-                          Buy ${" " + data.price}
+                          Buy ${data.price}
                         </Button>
                       </Card.Body>
                     </Card>

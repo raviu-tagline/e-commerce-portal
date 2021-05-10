@@ -1,5 +1,6 @@
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "../../axiosLib";
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import MainHeader from "../../reusableComponents/headers/mainHeader";
@@ -16,42 +17,73 @@ export default class AdminDash extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/register/", {
-      method: "get",
-    }).then((resp) => {
-      resp.json().then((res) => {
-        this.setState({ data: res });
-      });
-    });
+    this.getApiData();
+  }
+
+  deleteData(id) {
+    let response;
+    async function deleteApiData() {
+      response = await axios(
+        "delete",
+        process.env.REACT_APP_LOCAL_API_URL + "register/" + id
+      );
+
+      console.log(response);
+
+      if (response.statusCode === 200) {
+        alert("Record deleted");
+      }
+    }
+    if (id != 1) deleteApiData();
+    else alert("You can't delete admin profile");
+    this.getApiData();
+  }
+
+  getApiData() {
+    let response;
+    async function apiData() {
+      response = await axios(
+        "get",
+        process.env.REACT_APP_LOCAL_API_URL + "register/",
+        [],
+        false
+      );
+      if (response.statusCode === 200) {
+        return response.data;
+      }
+    }
+
+    apiData().then((result) => this.setState({ data: result }));
   }
   render() {
     return (
       <>
-        {this.state.data ? (
-          <>
-            <div className="container">
-              <div className="container-fluid">
-                <div className="card mt-5">
-                  <div className="card-title">
-                    <h1 className="text-center">Manage users</h1>
-                  </div>
-                  <div className="card-body">
-                    <Table striped bordered hover>
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>User Name</th>
-                          <th>User age</th>
-                          <th>User Mobile</th>
-                          <th>User Email</th>
-                          <th>User Role</th>
-                          <th colSpan="2">Operations</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {this.state.data.map((item, i) => (
+        <div className="container">
+          <div className="container-fluid">
+            <div className="card mt-5">
+              <div className="card-title">
+                <h1 className="text-center">Manage users</h1>
+              </div>
+              <div className="card-body">
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>User Name</th>
+                      <th>User age</th>
+                      <th>User Mobile</th>
+                      <th>User Email</th>
+                      <th>User Role</th>
+                      <th colSpan="2">Operations</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.data !== null ? (
+                      (console.log(this.state.data === null, this.state.data),
+                      this.state.data.map((item, i) =>
+                        item.role != "admin" ? (
                           <tr>
-                            <td>{i + 1}</td>
+                            <td>{i}</td>
                             <td>{item.name}</td>
                             <td>{item.age}</td>
                             <td>{item.number}</td>
@@ -72,17 +104,27 @@ export default class AdminDash extends Component {
                               </span>
                             </td>
                           </tr>
-                        ))}
-                      </tbody>
-                    </Table>
-                  </div>
-                </div>
+                        ) : (
+                          ""
+                        )
+                      ))
+                    ) : (
+                      <td
+                        colSpan="7"
+                        style={{
+                          textAlign: "center",
+                          background: "#f4f4f4",
+                        }}
+                      >
+                        No data found
+                      </td>
+                    )}
+                  </tbody>
+                </Table>
               </div>
             </div>
-          </>
-        ) : (
-          <p>Please wait.....</p>
-        )}
+          </div>
+        </div>
       </>
     );
   }

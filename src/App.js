@@ -39,23 +39,32 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/login">
             <Login />
           </Route>
           <Route path="/create">
             <Register />
           </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
           <Route path="/admin/dashboard">
             <ProtectedRoute component={AdminDash} role="admin" />
           </Route>
+          {/* <Route path="/admin/manage-users">
+            <ProtectedRoute component={AdminDash} role="admin" />
+          </Route> */}
           <Route path="/supplier/dashboard">
             <ProtectedRoute component={SupplierDash} role="supplier" />
           </Route>
           <Route path="/customer/dashboard">
             <ProtectedRoute component={CustomerDash} role="customer" />
           </Route>
-          <Route path="/home">
+          {/* <Route path="/home">
             <ProtectedRoute component={Home} role="customer" path="/home" />
-          </Route>
+          </Route> 
           <Route path="/profile">
             <ProtectedRoute></ProtectedRoute>
           </Route>
@@ -65,7 +74,7 @@ function App() {
               role="customer"
               path="/home"
             ></ProtectedRoute>
-          </Route>
+          </Route>*/}
         </Switch>
       </Router>
     </div>

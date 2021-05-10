@@ -21,13 +21,14 @@ const ProtectedRoute = (props) => {
   return (
     <>
       <MainHeader />
-      {path == "/home" ? (
+      {path == "/" ? (
         <>
-          <Cmp data={props.data} />
+          <Cmp />
         </>
       ) : (
         <>
           <NavSidebar />
+          <Cmp />
         </>
       )}
     </>

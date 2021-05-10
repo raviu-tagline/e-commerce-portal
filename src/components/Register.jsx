@@ -6,10 +6,19 @@ import Forms from "../reusableComponents/Form";
 import History from "../reusableContents/history";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 const Register = () => {
   const [changePath, setChangePath] = useState(false);
   const [path, setPath] = useState("/");
+
+  useEffect(() => {
+    if (localStorage.getItem("user-info")) {
+      const useData = JSON.parse(localStorage.getItem("user-info"));
+      setPath(useData[0].role + "/dashboard");
+      setChangePath(true);
+    }
+  }, []);
 
   const onSubmit = async (params) => {
     const { data, statusCode, message } = await axiosApi(
@@ -41,7 +50,7 @@ const Register = () => {
               <Forms content={registerDesign} onSubmit={onSubmit} />
               <hr />
               <p className="text-center">
-                Already have an account? <Links to="/">Login Here</Links>
+                Already have an account? <Links to="/login">Login Here</Links>
               </p>
             </div>
           </div>
