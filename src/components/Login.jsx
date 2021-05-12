@@ -13,7 +13,6 @@ const Login = (props) => {
   const [path, setPath] = useState("/");
 
   const onSubmit = async (param) => {
-    console.log(param.email);
     const { statusCode, data, message } = await axiosApi(
       "get",
       process.env.REACT_APP_LOCAL_API_URL +

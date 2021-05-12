@@ -34,13 +34,18 @@ img {
 }
 
 .remove-cart-btn {
-  padding: 5px 10px;
   color: #f34a4a;
 }
 
 .remove-cart-btn:hover {
   cursor: pointer;
-  border: 1px solid black;
-  border-radius: 15%;
-  margin-left: 5px;
+}
+
+.card-img-top {
+  height: auto;
+  padding-bottom: 5px;
+}
+
+div.sticky-top {
+  align-self: flex-start;
 }

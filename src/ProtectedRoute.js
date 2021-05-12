@@ -6,8 +6,6 @@ import NavSidebar from "./reusableComponents/headers/NavSidebar";
 const ProtectedRoute = (props) => {
   const history = useHistory();
 
-  console.log(props);
-
   let Cmp = props.component;
   let path = props.path;
   let role = props.role;

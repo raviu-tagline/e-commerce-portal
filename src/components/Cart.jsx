@@ -1,4 +1,4 @@
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
@@ -8,100 +8,174 @@ import {
   removeFromCartAction,
 } from "../redux/actions/cartActions";
 import MainHeader from "../reusableComponents/headers/mainHeader";
+import History from "../reusableContents/history";
 
 const Cart = () => {
   const cartData = useSelector((state) => state.cartData);
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
-  const [flag, setFlag] = useState(false);
-
-  console.log("State every time -- ", cartData);
+  const [dataSet, setData] = useState();
+  const [path, setPath] = useState("/");
+  const [changePath, setChangePath] = useState(false);
+  let userData;
+  let NoRec = "";
 
   useEffect(() => {
-    fetch("http://localhost:3001/Cart", {
-      method: "get",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) =>
-      res.json().then((result) => dispatch(addToCartAction(result)))
-    );
+    if (cartData.length == 0) {
+      fetch("http://localhost:3001/Cart", {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) =>
+        res.json().then((result) => {
+          setData(result);
+        })
+      );
+    } else {
+      setData(cartData);
+    }
   }, []);
 
-  const handleIncrement = (event) => {
-    setCount(count + 1);
+  const handleIncrement = (e, data) => {
+    data.count = data.count + 1;
+    data.price *= data.count;
+    setCount(data.count);
   };
 
-  const handleDecrement = (event) => {
-    if (count > 1) setCount(count - 1);
+  const handleDecrement = (e, data) => {
+    if (data.count > 1) {
+      data.price /= data.count;
+      data.count = data.count - 1;
+    }
+    setCount(data.count);
+  };
+
+  const removeCartData = (id) => {
+    // fetch("http://localhost:3001/Cart/" + id, {
+    //   method: "delete",
+    // }).then((res) => res.json().then((res) => console.log("delete")));
+    // dispatch(removeFromCartAction(id));
+    // fetch("http://localhost:3001/Cart", {
+    //   method: "get",
+    // }).then((res) => res.json().then((res) => setData(res)));
+  };
+
+  const handleClick = () => {
+    if (localStorage.getItem("user-info")) {
+      userData = JSON.parse(localStorage.getItem("user-info"));
+      alert("Purchase successfully done. Enjoy your day.");
+
+      setPath(userData[0].role + "/dashboard");
+    } else {
+      setPath("/login");
+    }
+    setChangePath(true);
   };
 
   return (
     <>
       <MainHeader />
-      <div className="container">
-        <h1>Cart List</h1>
-        <div className="row">
-          {cartData !== undefined
-            ? cartData.map((val, ind) => {
-                if (ind !== 0) {
-                  console.log(ind, val);
-                  return (
-                    <>
-                      <div className="col-sm-3 p-3">
-                        <Card>
-                          <Card.Header>{val.cartData.name}</Card.Header>
-                          {/* <Card.Img variant="top" src={data.imageUrl} /> */}
-                          <Card.Body>
-                            <Card.Text>{val.cartData.name}</Card.Text>
-                            <Card.Text>
-                              Price:{" "}
-                              {count > 1
-                                ? val.cartData.price * count
-                                : val.cartData.price}
-                            </Card.Text>
-                            <div className="row pt-2">
+      <div className="col-12 row mt-3">
+        <div className="col-8 ml-2">
+          <div className="card-title">
+            <h1>Cart List</h1>
+          </div>
+          <div className="row">
+            {dataSet !== undefined ? (
+              dataSet.map((val, ind) => {
+                return (
+                  <>
+                    <div className="pt-3">
+                      <Card>
+                        <Card.Header>{val.name}</Card.Header>
+                        <div className="row">
+                          <Card.Img
+                            variant="top"
+                            src={val.imageUrl}
+                            className="ml-1 pt-1 col-sm-3"
+                          />
+                          <Card.Body className="col-sm-8">
+                            <Card.Text>{val.name}</Card.Text>
+                            <Card.Text>{val.content}</Card.Text>
+                            <Card.Text>Price: ${val.price}</Card.Text>
+                            <div className="row pt-2 ml-0">
                               <Button
                                 variant="primary"
-                                id={val.cartData.id}
-                                data-value={val.cartData.price}
-                                onClick={(event) => handleIncrement(event)}
+                                id={val.id}
+                                data-value={val.price}
+                                onClick={(e) => handleIncrement(e, val)}
                                 className="col-3"
                               >
-                                {" "}
-                                +{" "}
+                                <FontAwesomeIcon icon={faPlus} />
                               </Button>
-                              <Card.Text className="col-3">{count}</Card.Text>
+                              <Card.Text className="col-3 text-center">
+                                {val.count}
+                              </Card.Text>
                               <Button
                                 variant="primary"
-                                id={val.cartData.id}
-                                data-value={val.cartData.price}
-                                onClick={(event) => handleDecrement(event)}
-                                className="col-3"
+                                id={val.id}
+                                data-value={val.price}
+                                onClick={(e) => handleDecrement(e, val)}
+                                className="col-3 btn-minus"
                               >
-                                {" "}
-                                -{" "}
+                                <FontAwesomeIcon icon={faMinus} />
                               </Button>
                               <div
-                                className="remove-cart-btn"
+                                className="remove-cart-btn pl-3 pt-1 ml-5"
                                 onClick={() =>
-                                  dispatch(
-                                    removeFromCartAction(val.cartData.id)
-                                  )
+                                  /*removeCartData(val.id)*/
+                                  dispatch(removeFromCartAction(val.id))
                                 }
                               >
                                 <FontAwesomeIcon icon={faTrash} />
                               </div>
                             </div>
                           </Card.Body>
-                        </Card>
-                      </div>
-                    </>
-                  );
-                }
+                        </div>
+                      </Card>
+                    </div>
+                  </>
+                );
               })
-            : "Data not found"}
+            ) : (
+              <>
+                <div>
+                  <p>{NoRec}</p>
+                </div>
+              </>
+            )}
+          </div>
         </div>
+        <div className="col-3 sticky-top">
+          <div className="card mt-4">
+            <div className="card-header text-muted">
+              <h5>PRICE DETAILS</h5>
+            </div>
+            <div className="card-body">
+              <div className="col-6">
+                Total (
+                {dataSet != undefined
+                  ? dataSet.length <= 1
+                    ? dataSet.length + " item"
+                    : dataSet.length + " items"
+                  : ""}
+                ):{" "}
+                <span className="float-right">
+                  $
+                  {dataSet != undefined
+                    ? dataSet.reduce((prev, current) => prev + current.price, 0)
+                    : ""}
+                </span>
+              </div>
+              <hr />
+              <Button variant="success" onClick={() => handleClick()}>
+                Proceed to Buy
+              </Button>
+            </div>
+          </div>
+        </div>
+        {changePath && <History path={path} />}
       </div>
     </>
   );

@@ -9,11 +9,10 @@ import { useSelector, useDispatch } from "react-redux";
 import Cart from "./Cart";
 
 const Home = (param) => {
-  const [dataArr, setDataArr] = useState();
+  const [dataArr, setDataArr] = useState([]);
   const [item_count, setCount] = useState(0);
-  const [cartData, setCartData] = useState();
 
-  const state = useSelector((state) => state.cartData);
+  const cartData = useSelector((state) => state.cartData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,24 +35,16 @@ const Home = (param) => {
     fetchApi();
   }, []);
 
-  const AddItem = (data) => {
-    setCartData([data]);
+  const AddItem = (e, data) => {
+    var id = e.target.getAttribute("id");
+    data.count = 1;
+    console.log(data);
+
+    document.getElementById(id).disabled = true;
     setCount(item_count + 1);
 
-    console.log(cartData);
-
-    fetch("http://localhost:3001/Cart", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(cartData),
-    });
+    dispatch(addToCartAction(data));
   };
-
-  useEffect(() => {
-    if (cartData != undefined) return dispatch(addToCartAction(cartData));
-  }, [cartData]);
 
   return (
     <>
@@ -88,14 +79,18 @@ const Home = (param) => {
                   <div className="col-sm-3 p-3">
                     <Card>
                       <Card.Header>{data.name}</Card.Header>
-                      {/* <Card.Img variant="top" src={data.imageUrl} /> */}
+                      <Card.Img
+                        variant="top"
+                        className="ml-1 pt-1"
+                        src={data.imageUrl}
+                      />
                       <Card.Body>
                         <Card.Text>{data.content}</Card.Text>
                         <Button
                           variant="primary"
                           id={data.id}
                           data-value={data.price}
-                          onClick={() => AddItem(data)}
+                          onClick={(e) => AddItem(e, data)}
                         >
                           Buy ${data.price}
                         </Button>

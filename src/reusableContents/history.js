@@ -5,7 +5,6 @@ const History = (props) => {
   let history = useHistory();
 
   useEffect(() => {
-    console.log("path", props);
     history.push(props.path);
   }, []);
 

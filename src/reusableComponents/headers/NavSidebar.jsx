@@ -57,8 +57,8 @@ export default class NavSidebar extends Component {
             {this.state.role == "admin" ? (
               <>
                 <li>
-                  <a href="#">
-                    <span className="e-text"> Manage users</span>
+                  <a href="/create">
+                    <span className="e-text"> Add users</span>
                   </a>
                 </li>
                 <li>

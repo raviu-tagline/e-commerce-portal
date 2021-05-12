@@ -28,8 +28,6 @@ export default class AdminDash extends Component {
         process.env.REACT_APP_LOCAL_API_URL + "register/" + id
       );
 
-      console.log(response);
-
       if (response.statusCode === 200) {
         alert("Record deleted");
       }
@@ -79,7 +77,6 @@ export default class AdminDash extends Component {
                   </thead>
                   <tbody>
                     {this.state.data !== null ? (
-                      (console.log(this.state.data === null, this.state.data),
                       this.state.data.map((item, i) =>
                         item.role != "admin" ? (
                           <tr>
@@ -107,7 +104,7 @@ export default class AdminDash extends Component {
                         ) : (
                           ""
                         )
-                      ))
+                      )
                     ) : (
                       <td
                         colSpan="7"
