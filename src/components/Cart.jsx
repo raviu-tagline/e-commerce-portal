@@ -30,12 +30,13 @@ const Cart = () => {
       }).then((res) =>
         res.json().then((result) => {
           setData(result);
+          dispatch(addToCartAction(result));
         })
       );
     } else {
       setData(cartData);
     }
-  }, []);
+  }, [dataSet]);
 
   const handleIncrement = (e, data) => {
     data.count = data.count + 1;
@@ -49,16 +50,6 @@ const Cart = () => {
       data.count = data.count - 1;
     }
     setCount(data.count);
-  };
-
-  const removeCartData = (id) => {
-    // fetch("http://localhost:3001/Cart/" + id, {
-    //   method: "delete",
-    // }).then((res) => res.json().then((res) => console.log("delete")));
-    // dispatch(removeFromCartAction(id));
-    // fetch("http://localhost:3001/Cart", {
-    //   method: "get",
-    // }).then((res) => res.json().then((res) => setData(res)));
   };
 
   const handleClick = () => {
@@ -76,12 +67,14 @@ const Cart = () => {
   return (
     <>
       <MainHeader />
+      {console.log("cartData -- ", cartData)}
       <div className="col-12 row mt-3">
-        <div className="col-8 ml-2">
-          <div className="card-title">
-            <h1>Cart List</h1>
-          </div>
-          <div className="row">
+        <div
+          className="col-8 ml-2"
+          style={{ borderRight: ".05px solid #cccccc" }}
+        >
+          <h5>Cart List</h5>
+          <div className="row mr-1">
             {dataSet !== undefined ? (
               dataSet.map((val, ind) => {
                 return (
@@ -141,7 +134,7 @@ const Cart = () => {
             ) : (
               <>
                 <div>
-                  <p>{NoRec}</p>
+                  <p>No record found!</p>
                 </div>
               </>
             )}

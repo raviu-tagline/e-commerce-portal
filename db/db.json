@@ -11,81 +11,64 @@
     },
     {
       "id": 2,
-      "name": "Rudra",
+      "name": "Abhi",
       "age": 55,
       "number": 8989898989,
-      "email": "supplier@test.com",
+      "email": "supplier@supplier.com",
       "password": "123456789",
       "role": "supplier"
     },
     {
       "id": 3,
-      "name": "Rakesh",
+      "name": "Keshav",
       "age": 55,
       "number": 8989898989,
-      "email": "customer@test.com",
+      "email": "customer@customer.com",
       "password": "123456789",
       "role": "customer"
-    },
-    {
-      "name": "test 1",
-      "age": "25",
-      "number": "9157074124",
-      "email": "test@test.com",
-      "password": "123456789",
-      "role": "customer",
-      "id": 4
-    },
-    {
-      "name": "tetet",
-      "age": "56",
-      "number": "9595989698",
-      "email": "test2@test.com",
-      "password": "111222333",
-      "role": "supplier",
-      "id": 5
     }
   ],
+  "Cart": [],
   "Category": [
     {
       "id": 1,
-      "name": "Elektronik",
+      "name": "Electronic",
       "productCount": 30,
-      "imageUrl": "https://i.hizliresim.com/6XJM5W.jpg "
+      "imageUrl": "https://i.hizliresim.com/6XJM5W.jpg"
     },
     {
       "id": 2,
-      "name": "Bebek, Oyuncak",
+      "name": "Baby toys",
       "productCount": 20,
-      "imageUrl": "https://i.hizliresim.com/y30jLa.jpg "
+      "imageUrl": "https://i.hizliresim.com/y30jLa.jpg"
     },
     {
       "id": 3,
-      "name": "Spor",
+      "name": "Sport",
       "productCount": 18,
       "imageUrl": "https://i.hizliresim.com/kWO0nm.jpg"
     },
     {
       "id": 4,
-      "name": "Kozmetik",
+      "name": "Cosmetic",
       "productCount": 24,
-      "imageUrl": "https://i.hizliresim.com/pW62BL.jpg "
+      "imageUrl": "https://i.hizliresim.com/pW62BL.jpg"
     },
     {
       "id": 5,
-      "name": "Giyim",
+      "name": "Clothing",
       "productCount": 22,
       "imageUrl": "https://i.hizliresim.com/RPnGoj.jpg"
     },
     {
       "id": 6,
-      "name": "Ev Eşyaları",
+      "name": "Home stuff",
       "productCount": 26,
       "imageUrl": "https://i.hizliresim.com/RPnGoj.jpg"
     },
     {
       "id": 7,
-      "name": "Kitap-Müzik",
+      "name": "Book/Music",
       "productCount": 24,
       "imageUrl": "https://i.hizliresim.com/3qEgY4.jpg"
     }
@@ -93,22 +76,22 @@
   "SubCategory": [
     {
       "id": 101,
-      "name": "Televizyon",
+      "name": "Television",
       "categoryId": 1
     },
     {
       "id": 102,
-      "name": "Telefon",
+      "name": "Telephone",
       "categoryId": 1
     },
     {
       "id": 103,
-      "name": "Bebek Arabası",
+      "name": "The stroller",
       "categoryId": 2
     },
     {
       "id": 104,
-      "name": "Oyuncak Bebek",
+      "name": "Doll",
       "categoryId": 2
     },
     {
@@ -123,42 +106,42 @@
     },
     {
       "id": 107,
-      "name": "Cilt Bakım",
+      "name": "Skin care",
       "categoryId": 4
     },
     {
       "id": 108,
-      "name": "Makyaj",
+      "name": "Make-up",
       "categoryId": 4
     },
     {
       "id": 109,
-      "name": "Kadın",
+      "name": "Woman",
       "categoryId": 5
     },
     {
       "id": 110,
-      "name": "Erkek",
+      "name": "Male",
       "categoryId": 5
     },
     {
       "id": 111,
-      "name": "Mobilya",
+      "name": "Furniture",
       "categoryId": 6
     },
     {
       "id": 112,
-      "name": "Ev Aksesuarları",
+      "name": "Home Accessories",
       "categoryId": 6
     },
     {
       "id": 113,
-      "name": "Roman",
+      "name": "Novel",
       "categoryId": 7
     },
     {
       "id": 114,
-      "name": "Tarihi Kitaplar",
+      "name": "Historical Books",
       "categoryId": 7
     }
   ],
@@ -170,11 +153,11 @@
       "subCategoryId": 101,
       "categoryId": 1,
       "rate": 2.44,
-      "content": "Culpa sed tenetur incidunt quia veniam sed mollitia exercitationem. Laboriosam reprehenderit laborum pariatur ea rem qui inventore. In asperiores dignissimos temporibus et. Beatae consequatur corrupti nam praesentium.",
+      "content": "Fault but do not fall for it, but I want of exercise. Find fault with her, acted as a wearisome toil, and a resultant was invented. At times the extremely deserving. Our results for the presence of corruption.",
       "review": 78,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=137x945&w=137&h=945"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 202,
@@ -200,7 +183,7 @@
       "review": 116,
       "typeVariant": "E",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/556x985"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 204,
@@ -213,7 +196,7 @@
       "review": 78,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/855x573"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 205,
@@ -226,7 +209,7 @@
       "review": 156,
       "typeVariant": "A",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=79x934&w=79&h=934"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 206,
@@ -239,7 +222,7 @@
       "review": 107,
       "typeVariant": "E",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/135x733"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 207,
@@ -252,7 +235,7 @@
       "review": 174,
       "typeVariant": "E",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=578x984&w=578&h=984"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 208,
@@ -265,7 +248,7 @@
       "review": 104,
       "typeVariant": "B",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=808x46&w=808&h=46"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 209,
@@ -278,7 +261,7 @@
       "review": 44,
       "typeVariant": "C",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/577/852"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 210,
@@ -291,7 +274,7 @@
       "review": 95,
       "typeVariant": "E",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/76x231"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 211,
@@ -304,7 +287,7 @@
       "review": 153,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=533x992&w=533&h=992"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 212,
@@ -317,7 +300,7 @@
       "review": 29,
       "typeVariant": "C",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/153x1011"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 213,
@@ -330,7 +313,7 @@
       "review": 200,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/379x367"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 214,
@@ -343,7 +326,7 @@
       "review": 68,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=470x604&w=470&h=604"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 215,
@@ -356,7 +339,7 @@
       "review": 86,
       "typeVariant": "B",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/624x281"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 216,
@@ -369,7 +352,7 @@
       "review": 135,
       "typeVariant": "E",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/864/326"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 217,
@@ -382,7 +365,7 @@
       "review": 186,
       "typeVariant": "A",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=270x252&w=270&h=252"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 218,
@@ -395,7 +378,7 @@
       "review": 125,
       "typeVariant": "B",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=757x645&w=757&h=645"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 219,
@@ -408,7 +391,7 @@
       "review": 125,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/839x368"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 220,
@@ -421,7 +404,7 @@
       "review": 34,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=296x80&w=296&h=80"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 221,
@@ -434,7 +417,7 @@
       "review": 151,
       "typeVariant": "E",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/177x607"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 222,
@@ -447,7 +430,7 @@
       "review": 67,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=642x911&w=642&h=911"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 223,
@@ -460,7 +443,7 @@
       "review": 188,
       "typeVariant": "E",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=381x581&w=381&h=581"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 224,
@@ -473,7 +456,7 @@
       "review": 63,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=986x453&w=986&h=453"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 225,
@@ -486,7 +469,7 @@
       "review": 116,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/539/402"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 226,
@@ -499,7 +482,7 @@
       "review": 157,
       "typeVariant": "A",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/786x94"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 227,
@@ -512,7 +495,7 @@
       "review": 30,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/974x504"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 228,
@@ -525,7 +508,7 @@
       "review": 11,
       "typeVariant": "E",
       "colorVariant": "1",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=394x236&w=394&h=236"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 229,
@@ -538,7 +521,7 @@
       "review": 78,
       "typeVariant": "C",
       "colorVariant": "4",
-      "imageUrl": "http://www.lorempixel.com/152/368"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 230,
@@ -551,7 +534,7 @@
       "review": 103,
       "typeVariant": "C",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/686x327"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 231,
@@ -564,7 +547,7 @@
       "review": 77,
       "typeVariant": "A",
       "colorVariant": "4",
-      "imageUrl": "http://www.lorempixel.com/264/459"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 232,
@@ -577,7 +560,7 @@
       "review": 126,
       "typeVariant": "D",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=581x409&w=581&h=409"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 233,
@@ -590,7 +573,7 @@
       "review": 21,
       "typeVariant": "A",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/698x680"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 234,
@@ -603,7 +586,7 @@
       "review": 120,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/600x862"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 235,
@@ -616,7 +599,7 @@
       "review": 118,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "http://www.lorempixel.com/10/116"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 236,
@@ -629,7 +612,7 @@
       "review": 30,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/357x988"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 237,
@@ -642,7 +625,7 @@
       "review": 112,
       "typeVariant": "A",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=393x425&w=393&h=425"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 238,
@@ -655,7 +638,7 @@
       "review": 68,
       "typeVariant": "E",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/904/25"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 239,
@@ -668,7 +651,7 @@
       "review": 53,
       "typeVariant": "A",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=431x742&w=431&h=742"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 240,
@@ -681,7 +664,7 @@
       "review": 199,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/572x213"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 241,
@@ -694,7 +677,7 @@
       "review": 67,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/98x433"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 242,
@@ -707,7 +690,7 @@
       "review": 1,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=1007x970&w=1007&h=970"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 243,
@@ -720,7 +703,7 @@
       "review": 26,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/829/996"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 244,
@@ -733,7 +716,7 @@
       "review": 56,
       "typeVariant": "E",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=837x461&w=837&h=461"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 245,
@@ -746,7 +729,7 @@
       "review": 193,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=929x50&w=929&h=50"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 246,
@@ -759,7 +742,7 @@
       "review": 141,
       "typeVariant": "C",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=814x312&w=814&h=312"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 247,
@@ -772,7 +755,7 @@
       "review": 11,
       "typeVariant": "B",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/79/241"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 248,
@@ -785,7 +768,7 @@
       "review": 161,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=326x688&w=326&h=688"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 249,
@@ -798,7 +781,7 @@
       "review": 89,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=814x346&w=814&h=346"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 250,
@@ -811,7 +794,7 @@
       "review": 74,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/919x653"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 251,
@@ -824,7 +807,7 @@
       "review": 25,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/741/328"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 252,
@@ -837,7 +820,7 @@
       "review": 13,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=1002x757&w=1002&h=757"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 253,
@@ -850,7 +833,7 @@
       "review": 116,
       "typeVariant": "E",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/819/147"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 254,
@@ -863,7 +846,7 @@
       "review": 193,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/818x38"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 255,
@@ -876,7 +859,7 @@
       "review": 166,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=549x208&w=549&h=208"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 256,
@@ -889,7 +872,7 @@
       "review": 52,
       "typeVariant": "A",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/64/850"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 257,
@@ -902,7 +885,7 @@
       "review": 1,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/792/501"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 258,
@@ -915,7 +898,7 @@
       "review": 150,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "http://www.lorempixel.com/392/558"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 259,
@@ -928,7 +911,7 @@
       "review": 128,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=428x336&w=428&h=336"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 260,
@@ -941,7 +924,7 @@
       "review": 141,
       "typeVariant": "E",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=655x143&w=655&h=143"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 261,
@@ -954,7 +937,7 @@
       "review": 96,
       "typeVariant": "B",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=183x413&w=183&h=413"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 262,
@@ -967,7 +950,7 @@
       "review": 45,
       "typeVariant": "D",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=361x863&w=361&h=863"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 263,
@@ -980,7 +963,7 @@
       "review": 156,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/126/191"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 264,
@@ -993,7 +976,7 @@
       "review": 23,
       "typeVariant": "E",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/359x257"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 265,
@@ -1006,7 +989,7 @@
       "review": 192,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "http://www.lorempixel.com/723/776"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 266,
@@ -1019,7 +1002,7 @@
       "review": 169,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/1007x329"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 267,
@@ -1032,7 +1015,7 @@
       "review": 28,
       "typeVariant": "C",
       "colorVariant": "4",
-      "imageUrl": "http://www.lorempixel.com/905/770"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 268,
@@ -1045,7 +1028,7 @@
       "review": 151,
       "typeVariant": "D",
       "colorVariant": "4",
-      "imageUrl": "http://www.lorempixel.com/530/215"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 269,
@@ -1058,7 +1041,7 @@
       "review": 50,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/480x442"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 270,
@@ -1071,7 +1054,7 @@
       "review": 72,
       "typeVariant": "B",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=977x381&w=977&h=381"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 271,
@@ -1084,7 +1067,7 @@
       "review": 166,
       "typeVariant": "D",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/216x357"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 272,
@@ -1097,7 +1080,7 @@
       "review": 96,
       "typeVariant": "C",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=664x425&w=664&h=425"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 273,
@@ -1105,12 +1088,12 @@
       "price": 263,
       "subCategoryId": 107,
       "categoryId": 4,
-      "rate": 2.0,
+      "rate": 2,
       "content": "Nobis voluptate excepturi odit animi. Voluptates itaque enim iure voluptatibus libero fugit. Iusto tempora maiores aperiam quisquam.",
       "review": 28,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/200x879"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 274,
@@ -1123,7 +1106,7 @@
       "review": 118,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/461/675"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 275,
@@ -1136,7 +1119,7 @@
       "review": 161,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=1012x39&w=1012&h=39"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 276,
@@ -1149,7 +1132,7 @@
       "review": 63,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/159x241"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 277,
@@ -1162,7 +1145,7 @@
       "review": 200,
       "typeVariant": "A",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/75x496"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 278,
@@ -1175,7 +1158,7 @@
       "review": 145,
       "typeVariant": "E",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/1019/400"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 279,
@@ -1188,7 +1171,7 @@
       "review": 152,
       "typeVariant": "C",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/953/759"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 280,
@@ -1201,7 +1184,7 @@
       "review": 109,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=1020x397&w=1020&h=397"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 281,
@@ -1214,7 +1197,7 @@
       "review": 32,
       "typeVariant": "A",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/947x108"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 282,
@@ -1227,7 +1210,7 @@
       "review": 19,
       "typeVariant": "C",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/837x611"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 283,
@@ -1240,7 +1223,7 @@
       "review": 135,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "http://www.lorempixel.com/316/321"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 284,
@@ -1253,7 +1236,7 @@
       "review": 27,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/398x558"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 285,
@@ -1266,7 +1249,7 @@
       "review": 181,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "http://www.lorempixel.com/55/827"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 286,
@@ -1279,7 +1262,7 @@
       "review": 193,
       "typeVariant": "C",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/804/486"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 287,
@@ -1292,7 +1275,7 @@
       "review": 188,
       "typeVariant": "B",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/261/923"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 288,
@@ -1305,7 +1288,7 @@
       "review": 161,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=378x940&w=378&h=940"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 289,
@@ -1318,7 +1301,7 @@
       "review": 168,
       "typeVariant": "C",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/72x712"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 290,
@@ -1331,7 +1314,7 @@
       "review": 75,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=896x635&w=896&h=635"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 291,
@@ -1344,7 +1327,7 @@
       "review": 13,
       "typeVariant": "E",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/519x648"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 292,
@@ -1357,7 +1340,7 @@
       "review": 160,
       "typeVariant": "A",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/42x609"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 293,
@@ -1370,7 +1353,7 @@
       "review": 137,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/928/944"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 294,
@@ -1383,7 +1366,7 @@
       "review": 127,
       "typeVariant": "A",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/136/936"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 295,
@@ -1396,7 +1379,7 @@
       "review": 57,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=674x664&w=674&h=664"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 296,
@@ -1409,7 +1392,7 @@
       "review": 5,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=235x308&w=235&h=308"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 297,
@@ -1422,7 +1405,7 @@
       "review": 184,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/895x619"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 298,
@@ -1435,7 +1418,7 @@
       "review": 68,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/92x294"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 299,
@@ -1448,7 +1431,7 @@
       "review": 121,
       "typeVariant": "D",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=157x546&w=157&h=546"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 300,
@@ -1461,7 +1444,7 @@
       "review": 55,
       "typeVariant": "A",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/515x235"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 301,
@@ -1474,7 +1457,7 @@
       "review": 2,
       "typeVariant": "A",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/266x326"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 302,
@@ -1487,7 +1470,7 @@
       "review": 136,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "http://www.lorempixel.com/90/38"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 303,
@@ -1500,7 +1483,7 @@
       "review": 5,
       "typeVariant": "A",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/536/145"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 304,
@@ -1513,7 +1496,7 @@
       "review": 167,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/394x44"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 305,
@@ -1526,7 +1509,7 @@
       "review": 32,
       "typeVariant": "C",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=569x118&w=569&h=118"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 306,
@@ -1539,7 +1522,7 @@
       "review": 76,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/74x541"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 307,
@@ -1552,7 +1535,7 @@
       "review": 124,
       "typeVariant": "E",
       "colorVariant": "1",
-      "imageUrl": "http://www.lorempixel.com/83/204"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 308,
@@ -1565,7 +1548,7 @@
       "review": 135,
       "typeVariant": "E",
       "colorVariant": "1",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=832x143&w=832&h=143"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 309,
@@ -1578,7 +1561,7 @@
       "review": 167,
       "typeVariant": "E",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=351x502&w=351&h=502"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 310,
@@ -1591,7 +1574,7 @@
       "review": 26,
       "typeVariant": "A",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/921x262"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 311,
@@ -1604,7 +1587,7 @@
       "review": 103,
       "typeVariant": "B",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/811/741"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 312,
@@ -1617,7 +1600,7 @@
       "review": 129,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=525x297&w=525&h=297"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 313,
@@ -1630,7 +1613,7 @@
       "review": 173,
       "typeVariant": "C",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=683x182&w=683&h=182"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 314,
@@ -1643,7 +1626,7 @@
       "review": 177,
       "typeVariant": "B",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/396x712"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 315,
@@ -1656,7 +1639,7 @@
       "review": 125,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/1016/738"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 316,
@@ -1669,7 +1652,7 @@
       "review": 33,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/436/977"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 317,
@@ -1682,7 +1665,7 @@
       "review": 182,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/240x342"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 318,
@@ -1695,7 +1678,7 @@
       "review": 118,
       "typeVariant": "A",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=747x667&w=747&h=667"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 319,
@@ -1708,7 +1691,7 @@
       "review": 157,
       "typeVariant": "E",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/938/156"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 320,
@@ -1721,7 +1704,7 @@
       "review": 48,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/675/252"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 321,
@@ -1734,7 +1717,7 @@
       "review": 185,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=225x326&w=225&h=326"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 322,
@@ -1747,7 +1730,7 @@
       "review": 70,
       "typeVariant": "C",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/228x964"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 323,
@@ -1760,7 +1743,7 @@
       "review": 194,
       "typeVariant": "A",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/381x500"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 324,
@@ -1773,7 +1756,7 @@
       "review": 46,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=821x209&w=821&h=209"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 325,
@@ -1786,7 +1769,7 @@
       "review": 28,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/987x273"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 326,
@@ -1799,7 +1782,7 @@
       "review": 40,
       "typeVariant": "A",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/75/640"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 327,
@@ -1812,7 +1795,7 @@
       "review": 87,
       "typeVariant": "D",
       "colorVariant": "4",
-      "imageUrl": "http://www.lorempixel.com/37/186"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 328,
@@ -1825,7 +1808,7 @@
       "review": 30,
       "typeVariant": "D",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/748x819"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 329,
@@ -1838,7 +1821,7 @@
       "review": 105,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/571/565"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 330,
@@ -1851,7 +1834,7 @@
       "review": 85,
       "typeVariant": "E",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/226x669"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 331,
@@ -1864,7 +1847,7 @@
       "review": 129,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=525x457&w=525&h=457"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 332,
@@ -1877,7 +1860,7 @@
       "review": 68,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=57x345&w=57&h=345"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 333,
@@ -1890,7 +1873,7 @@
       "review": 137,
       "typeVariant": "E",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/336x574"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 334,
@@ -1903,7 +1886,7 @@
       "review": 20,
       "typeVariant": "A",
       "colorVariant": "1",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=49x563&w=49&h=563"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 335,
@@ -1916,7 +1899,7 @@
       "review": 15,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=231x266&w=231&h=266"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 336,
@@ -1929,7 +1912,7 @@
       "review": 196,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/940x438"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 337,
@@ -1942,7 +1925,7 @@
       "review": 115,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/297/794"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 338,
@@ -1955,7 +1938,7 @@
       "review": 198,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/340/136"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 339,
@@ -1968,7 +1951,7 @@
       "review": 60,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/344/582"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 340,
@@ -1981,7 +1964,7 @@
       "review": 2,
       "typeVariant": "D",
       "colorVariant": "2",
-      "imageUrl": "http://www.lorempixel.com/265/388"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 341,
@@ -1994,7 +1977,7 @@
       "review": 59,
       "typeVariant": "C",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/304x847"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 342,
@@ -2007,7 +1990,7 @@
       "review": 106,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/299x475"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 343,
@@ -2020,7 +2003,7 @@
       "review": 117,
       "typeVariant": "E",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/116x827"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 344,
@@ -2033,7 +2016,7 @@
       "review": 54,
       "typeVariant": "C",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/382x4"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 345,
@@ -2046,7 +2029,7 @@
       "review": 63,
       "typeVariant": "B",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=722x708&w=722&h=708"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 346,
@@ -2059,7 +2042,7 @@
       "review": 27,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "http://www.lorempixel.com/502/972"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 347,
@@ -2067,12 +2050,12 @@
       "price": 265,
       "subCategoryId": 113,
       "categoryId": 7,
-      "rate": 1.0,
+      "rate": 1,
       "content": "Minima aliquam soluta deserunt. Quibusdam minus necessitatibus ut cum. Perferendis perspiciatis veritatis praesentium accusantium.",
       "review": 153,
       "typeVariant": "D",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/786x331"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 348,
@@ -2085,7 +2068,7 @@
       "review": 168,
       "typeVariant": "B",
       "colorVariant": "3",
-      "imageUrl": "http://www.lorempixel.com/290/179"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 349,
@@ -2098,7 +2081,7 @@
       "review": 196,
       "typeVariant": "D",
       "colorVariant": "5",
-      "imageUrl": "https://dummyimage.com/255x98"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 350,
@@ -2111,7 +2094,7 @@
       "review": 23,
       "typeVariant": "B",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/572x787"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 351,
@@ -2124,7 +2107,7 @@
       "review": 58,
       "typeVariant": "B",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=505x520&w=505&h=520"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 352,
@@ -2137,7 +2120,7 @@
       "review": 89,
       "typeVariant": "D",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=787x670&w=787&h=670"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 353,
@@ -2150,7 +2133,7 @@
       "review": 33,
       "typeVariant": "A",
       "colorVariant": "1",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=351x849&w=351&h=849"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 354,
@@ -2163,7 +2146,7 @@
       "review": 149,
       "typeVariant": "A",
       "colorVariant": "1",
-      "imageUrl": "https://dummyimage.com/568x324"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 355,
@@ -2176,7 +2159,7 @@
       "review": 65,
       "typeVariant": "C",
       "colorVariant": "5",
-      "imageUrl": "http://www.lorempixel.com/941/361"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 356,
@@ -2189,7 +2172,7 @@
       "review": 87,
       "typeVariant": "C",
       "colorVariant": "5",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=313x143&w=313&h=143"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 357,
@@ -2202,7 +2185,7 @@
       "review": 40,
       "typeVariant": "A",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/830x1012"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 358,
@@ -2215,7 +2198,7 @@
       "review": 180,
       "typeVariant": "A",
       "colorVariant": "2",
-      "imageUrl": "https://dummyimage.com/116x403"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 359,
@@ -2228,7 +2211,7 @@
       "review": 10,
       "typeVariant": "B",
       "colorVariant": "1",
-      "imageUrl": "http://www.lorempixel.com/740/999"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 360,
@@ -2241,7 +2224,7 @@
       "review": 104,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=684x795&w=684&h=795"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 361,
@@ -2254,7 +2237,7 @@
       "review": 127,
       "typeVariant": "B",
       "colorVariant": "2",
-      "imageUrl": "https://placeholdit.imgix.net/~text?txtsize=55&txt=714x804&w=714&h=804"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 362,
@@ -2267,7 +2250,7 @@
       "review": 91,
       "typeVariant": "A",
       "colorVariant": "3",
-      "imageUrl": "https://dummyimage.com/124x738"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 363,
@@ -2280,7 +2263,7 @@
       "review": 8,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/853x602"
+      "imageUrl": "https://dummyimage.com/931x785"
     },
     {
       "id": 364,
@@ -2293,7 +2276,7 @@
       "review": 17,
       "typeVariant": "B",
       "colorVariant": "4",
-      "imageUrl": "https://dummyimage.com/353x132"
+      "imageUrl": "https://dummyimage.com/931x785"
     }
   ]
 }

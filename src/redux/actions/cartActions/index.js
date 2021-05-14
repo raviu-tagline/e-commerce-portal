@@ -1,11 +1,23 @@
 import axiosApi from "../../../axiosLib";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../../constants";
 
-export const addToCartAction = (data) => (dispatch, getState) => {
+export const addToCartAction = (param) => async (dispatch, getState) => {
   const state = getState();
-  console.log("Count -- ", data);
-  let resp = fetchApiFunction("post", data);
-  if (resp.statusCode === 201) {
+  let data;
+
+  if (state.cartData.length != 0) {
+    const response = await fetchApiFunction("post", param);
+    data = response.data;
+    if (response.statusCode == 201) {
+      dispatch({
+        type: ADD_TO_CART,
+        data,
+      });
+    } else {
+      alert(response.message);
+    }
+  } else {
+    data = param;
     dispatch({
       type: ADD_TO_CART,
       data,
@@ -13,41 +25,37 @@ export const addToCartAction = (data) => (dispatch, getState) => {
   }
 };
 
-export const removeFromCartAction = (deleteId) => (dispatch, getState) => {
-  const state = getState();
-  const itemList = [...state.cartData];
-  const index = findIndex(itemList, deleteId);
+export const removeFromCartAction =
+  (deleteId) => async (dispatch, getState) => {
+    const state = getState();
+    let itemList = [...state.cartData];
 
-  console.log(
-    " itemList -- ",
-    itemList,
-    " State -- ",
-    state
-    // "ID -- ",
-    // deleteId,
-    // " index -- ",
-    // index
-  );
-  if (index > -1) {
-    itemList.splice(index, 1);
-  }
+    // if (state.cartData.length == 0) {
+    //   const fromApi = await fetchApiFunction("get");
+    //   if (fromApi.statusCode == 200) {
+    //     itemList = fromApi.data;
+    //     state.cartData = fromApi.data;
+    //   }
+    // }
 
-  dispatch({
-    type: REMOVE_FROM_CART,
-    itemList,
-  });
-};
+    console.log("state -- is -- ", state, " item List -- ", itemList);
 
-const findIndex = (list, findingId) =>
-  list.findIndex((x) => x.id === findingId);
+    const removeData = await fetchApiFunction("delete", [], deleteId);
+    if (removeData.statusCode === 200) {
+      dispatch({
+        type: REMOVE_FROM_CART,
+        itemList,
+        deleteId,
+      });
+    }
+  };
 
-async function fetchApiFunction(method, param = "", id = "") {
-  let response = await axiosApi(
+const fetchApiFunction = async (method, param = [], id = "") => {
+  let data = await axiosApi(
     method,
     process.env.REACT_APP_LOCAL_API_URL + "Cart/" + id,
     param,
     false
   );
-
-  return response;
-}
+  return data;
+};

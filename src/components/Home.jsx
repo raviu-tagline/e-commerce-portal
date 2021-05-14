@@ -7,6 +7,8 @@ import MainHeader from "../reusableComponents/headers/mainHeader";
 import { addToCartAction } from "../redux/actions/cartActions";
 import { useSelector, useDispatch } from "react-redux";
 import Cart from "./Cart";
+import NavBar from "../reusableComponents/headers/NavBar";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Home = (param) => {
   const [dataArr, setDataArr] = useState([]);
@@ -38,7 +40,6 @@ const Home = (param) => {
   const AddItem = (e, data) => {
     var id = e.target.getAttribute("id");
     data.count = 1;
-    console.log(data);
 
     document.getElementById(id).disabled = true;
     setCount(item_count + 1);
@@ -49,10 +50,11 @@ const Home = (param) => {
   return (
     <>
       <MainHeader />
+      <NavBar />
       <div className="container">
         <div className="row">
           <div className="col-9">
-            <h1>Home page</h1>
+            <h5>All Products</h5>
           </div>
           <div className="col-3">
             <Link to="/cart" params={cartData}>

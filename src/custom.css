@@ -2,11 +2,15 @@
   /* border: none !important; */
 }
 
+hr {
+  margin-top: 0rem !important;
+}
+
 a.Nav-link:hover {
   text-decoration: none;
 }
 
-a strong {
+.btn strong {
   color: white !important;
 }
 

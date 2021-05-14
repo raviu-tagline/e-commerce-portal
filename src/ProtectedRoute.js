@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import MainHeader from "./reusableComponents/headers/mainHeader";
 import NavSidebar from "./reusableComponents/headers/NavSidebar";
+import NavBar from "./reusableComponents/headers/NavBar";
 
 const ProtectedRoute = (props) => {
   const history = useHistory();
