@@ -1,4 +1,9 @@
-import { ADD_TO_CART, GET_FROM_CART, REMOVE_FROM_CART } from "../constants";
+import {
+  ADD_TO_CART,
+  EDIT_CART_DETAILS,
+  GET_FROM_CART,
+  REMOVE_FROM_CART,
+} from "../constants";
 
 export default function (state = [], action) {
   switch (action.type) {
@@ -7,6 +12,10 @@ export default function (state = [], action) {
 
     case ADD_TO_CART:
       return [...state, action.data];
+
+    case EDIT_CART_DETAILS:
+      console.log(`action.data.id`, action.data.id);
+      return [action.data];
 
     case REMOVE_FROM_CART:
       return [

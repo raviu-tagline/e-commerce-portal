@@ -1,26 +1,9 @@
 import "./App.css";
 import "./style.css";
-import {
-  Switch,
-  Route,
-  BrowserRouter as Router,
-  Redirect,
-} from "react-router-dom";
-import { Nav, Navbar, NavLink } from "react-bootstrap";
-import Main from "./reusableComponents/headers/mainHeader";
-import {
-  faHome,
-  faList,
-  faPlus,
-  faSignInAlt,
-  faSignOutAlt,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Helmet from "react-helmet";
-import Navigation from "./reusableComponents/headers/NavBar";
-import Common from "./reusableComponents/Common";
 import Register from "./components/Register";
 import "./custom.css";
 import { ToastContainer } from "react-toastify";
@@ -33,6 +16,7 @@ import Cart from "./components/Cart";
 function App() {
   return (
     <div className="App">
+      {/* <ToastContainer /> */}
       <Helmet>
         <title>E-Commerce-Portal</title>
       </Helmet>

@@ -1,16 +1,41 @@
 import axiosApi from "../../../axiosLib";
-import { ADD_TO_CART, GET_FROM_CART, REMOVE_FROM_CART } from "../../constants";
+import {
+  ADD_TO_CART,
+  EDIT_CART_DETAILS,
+  GET_FROM_CART,
+  REMOVE_FROM_CART,
+} from "../../constants";
 
 export const getCartDataAction = (params) => async (dispatch, getState) => {
   const state = getState();
   let data;
   let response = await fetchApiFunction("get");
-  data = response.data;
   if (response.statusCode === 200) {
+    data = response.data;
     dispatch({
       type: GET_FROM_CART,
       data,
     });
+  }
+};
+
+export const editCartDataAction = (params) => async (dispatch, getState) => {
+  const state = getState();
+  console.log(`params`, params);
+  let response = await fetchApiFunction(
+    "PATCH",
+    JSON.stringify({
+      count: params.count,
+      price: params.price,
+    }),
+    params.id
+  );
+  // response = await fetchApiFunction("get");
+  let data;
+  if (response.statusCode === 200) {
+    // data = response.data;
+    // dispatch(getCartDataAction());
+    console.log(`response data`, response.data);
   }
 };
 

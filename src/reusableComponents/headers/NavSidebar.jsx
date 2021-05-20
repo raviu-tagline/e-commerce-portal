@@ -25,9 +25,9 @@ export default class NavSidebar extends Component {
     if (localStorage.getItem("user-info")) {
       const userData = JSON.parse(localStorage.getItem("user-info"));
       this.setState({
-        name: userData[0].name,
-        username: userData[0].email,
-        role: userData[0].role,
+        name: userData.name,
+        username: userData.email,
+        role: userData.role,
       });
     }
   }

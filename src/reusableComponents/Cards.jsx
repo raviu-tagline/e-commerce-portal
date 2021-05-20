@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFromCartAction } from "../redux/actions/cartActions";
 
 const Cards = (props) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const cart = useSelector((state) => state.cartData);
   // console.log(`cart`, cart);
   // const [count, setCount] = useState(1);
@@ -33,7 +33,7 @@ const Cards = (props) => {
         <div className={props.component == "cart" ? "row" : ""}>
           <Card.Img
             variant="top"
-            src={props.imageUrl}
+            src={props.image}
             className={
               props.component == "cart" ? "ml-1 pt-1 col-sm-3" : "ml-1 pt-1"
             }
@@ -67,7 +67,7 @@ const Cards = (props) => {
                   </Button>
                   <div
                     className="remove-cart-btn pl-3 pt-1 ml-5"
-                    onClick={() => dispatch(removeFromCartAction(props.id))}
+                    onClick={() => props.handleRemoveCart(props.id)}
                   >
                     <FontAwesomeIcon icon={faTrash} />
                   </div>

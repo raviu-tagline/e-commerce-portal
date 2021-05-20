@@ -24,13 +24,15 @@ const Login = (props) => {
     );
 
     if (statusCode === 200 && data.length > 0) {
-      // toast.success("login successful", {
-      //   position: "top-right",
-      // });
+      toast.success("login successful", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 1000,
+      });
 
       const rest = { ...data };
+      rest[0].password = "";
       // localStorage.setItem("token", token);
-      localStorage.setItem("user-info", JSON.stringify(data));
+      localStorage.setItem("user-info", JSON.stringify(rest[0]));
       setPath(rest[0].role + "/dashboard");
       setChangePath(true);
     } else {
@@ -41,7 +43,7 @@ const Login = (props) => {
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       const useData = JSON.parse(localStorage.getItem("user-info"));
-      setPath(useData[0].role + "/dashboard");
+      setPath(useData.role + "/dashboard");
       setChangePath(true);
     }
   }, []);

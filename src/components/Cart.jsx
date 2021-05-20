@@ -1,12 +1,9 @@
-import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addToCartAction,
   removeFromCartAction,
   getCartDataAction,
+  editCartDataAction,
 } from "../redux/actions/cartActions";
 import Cards from "../reusableComponents/Cards";
 import MainHeader from "../reusableComponents/headers/mainHeader";
@@ -29,9 +26,10 @@ const Cart = () => {
   const handleIncrement = (e, data) => {
     data = {
       ...data,
-      count: count + 1,
-      price: (count + 1) * data.price,
+      count: data.count + 1,
+      price: (data.count + 1) * data.actualPrice,
     };
+    dispatch(editCartDataAction(data));
     setCount(data.count);
   };
 
@@ -40,10 +38,10 @@ const Cart = () => {
       data = {
         ...data,
         count: data.count - 1,
-        price: (data.count - 1) / data.price,
+        price: data.price - data.actualPrice,
       };
-      data.price /= data.count;
-      data.count = data.count - 1;
+      console.log(`decr data`, data);
+      dispatch(editCartDataAction(data));
     }
     setCount(data.count);
   };
@@ -53,11 +51,15 @@ const Cart = () => {
       userData = JSON.parse(localStorage.getItem("user-info"));
       alert("Purchase successfully done. Enjoy your day.");
 
-      setPath(userData[0].role + "/dashboard");
+      setPath(userData.role + "/dashboard");
     } else {
       setPath("/login");
     }
     setChangePath(true);
+  };
+
+  const handleRemoveCart = (id) => {
+    dispatch(removeFromCartAction(id));
   };
 
   return (
@@ -78,61 +80,18 @@ const Cart = () => {
                     <div className="pt-3">
                       <Cards
                         component="cart"
-                        header={val.name}
-                        imageUrl={val.image}
+                        header={val.header}
+                        image={val.image}
                         content={val.content}
                         price={val.price}
+                        actualPrice={val.actualPrice}
                         id={val.id}
                         count={val.count}
                         handleIncrement={handleIncrement}
                         handleDecrement={handleDecrement}
+                        handleRemoveCart={handleRemoveCart}
+                        user={val.user}
                       />
-                      {/* <Card>
-                        <Card.Header>{val.name}</Card.Header>
-                        <div className="row">
-                          <Card.Img
-                            variant="top"
-                            src={val.imageUrl}
-                            className="ml-1 pt-1 col-sm-3"
-                          />
-                          <Card.Body className="col-sm-8">
-                            <Card.Text>{val.content}</Card.Text>
-                            <Card.Text>Price: ${val.price}</Card.Text>
-                            <div className="row pt-2 ml-0">
-                              <Button
-                                variant="primary"
-                                id={val.id}
-                                data-value={val.price}
-                                onClick={(e) => handleIncrement(e, val)}
-                                className="col-3"
-                              >
-                                <FontAwesomeIcon icon={faPlus} />
-                              </Button>
-                              <Card.Text className="col-3 text-center">
-                                {val.count}
-                              </Card.Text>
-                              <Button
-                                variant="primary"
-                                id={val.id}
-                                data-value={val.price}
-                                onClick={(e) => handleDecrement(e, val)}
-                                className="col-3 btn-minus"
-                              >
-                                <FontAwesomeIcon icon={faMinus} />
-                              </Button>
-                              <div
-                                className="remove-cart-btn pl-3 pt-1 ml-5"
-                                onClick={() =>
-                                  /*removeCartData(val.id)
-                                  dispatch(removeFromCartAction(val.id))
-                                }
-                              >
-                                <FontAwesomeIcon icon={faTrash} />
-                              </div>
-                            </div>
-                          </Card.Body>
-                        </div>
-                              </Card> */}
                     </div>
                   </>
                 );
@@ -164,9 +123,9 @@ const Cart = () => {
                 </span>
               </div>
               <hr />
-              <Button variant="success" onClick={() => handleClick()}>
+              <button className="btn btn-success" onClick={() => handleClick()}>
                 Proceed to Buy
-              </Button>
+              </button>
             </div>
           </div>
         </div>

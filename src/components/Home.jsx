@@ -45,10 +45,15 @@ const Home = (param) => {
 
   const AddItem = (e, data) => {
     var id = e.target.getAttribute("id");
-    data = {
-      ...data,
-      count: 1,
-    };
+    let userData = localStorage.getItem("user-info");
+    if (userData) {
+      data = {
+        ...data,
+        count: 1,
+        actualPrice: data.price,
+        user: JSON.parse(userData),
+      };
+    }
 
     document.getElementById(id).disabled = true;
     dispatch(addToCartAction(data));

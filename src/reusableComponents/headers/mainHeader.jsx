@@ -19,7 +19,7 @@ const MainHeader = () => {
     RenderComp = (
       <>
         <Nav.Link>
-          <Link to={userData[0].role + "/dashboard"}>
+          <Link to={userData.role + "/dashboard"}>
             <ProfileImg path={imgPath} />
           </Link>
           <Link to="/">

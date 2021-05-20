@@ -5,12 +5,11 @@ import { useHistory } from "react-router-dom";
 
 const axiosApi = (method, apiUrl, data, isToken) =>
   new Promise((resolve, reject) => {
-    let headers = {};
+    let headers = { "Content-type": "application/json" };
     const history = useHistory;
     if (isToken) {
       headers = {
         "access-token": localStorage.getItem("token"),
-        "Content-type": "application/json",
       };
     }
 
