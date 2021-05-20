@@ -6,26 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFromCartAction } from "../redux/actions/cartActions";
 
 const Cards = (props) => {
-  // const dispatch = useDispatch();
-  // const cart = useSelector((state) => state.cartData);
-  // console.log(`cart`, cart);
-  // const [count, setCount] = useState(1);
-  // //   console.log(`cart`, cart);
-
-  // const handleIncrement = (e, data) => {
-  //   data.count = data.count + 1;
-  //   data.price *= data.count;
-  //   setCount(data.count);
-  // };
-
-  // const handleDecrement = (e, data) => {
-  //   // console.log(`data are`, data);
-  //   if (data.count > 1) {
-  //     data.price /= data.count;
-  //     data.count = data.count - 1;
-  //   }
-  //   setCount(data.count);
-  // };
   return (
     <>
       <Card>

@@ -40,7 +40,6 @@ const Cart = () => {
         count: data.count - 1,
         price: data.price - data.actualPrice,
       };
-      console.log(`decr data`, data);
       dispatch(editCartDataAction(data));
     }
     setCount(data.count);

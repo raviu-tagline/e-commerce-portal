@@ -21,21 +21,21 @@ export const getCartDataAction = (params) => async (dispatch, getState) => {
 
 export const editCartDataAction = (params) => async (dispatch, getState) => {
   const state = getState();
-  console.log(`params`, params);
   let response = await fetchApiFunction(
-    "PATCH",
+    "patch",
     JSON.stringify({
       count: params.count,
       price: params.price,
     }),
     params.id
   );
-  // response = await fetchApiFunction("get");
   let data;
   if (response.statusCode === 200) {
-    // data = response.data;
-    // dispatch(getCartDataAction());
-    console.log(`response data`, response.data);
+    let ind = state.cartData.findIndex((obj) => obj.id === response.data.id);
+    state.cartData[ind] = response.data;
+    dispatch({
+      type: EDIT_CART_DETAILS,
+    });
   }
 };
 

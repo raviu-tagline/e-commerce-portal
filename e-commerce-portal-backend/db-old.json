@@ -1,0 +1,1236 @@
+{
+
+	"sources": [
+    {
+			"id": 1,
+			"name": "Hive",
+			"logo": "https://galileo-viz.herokuapp.com/hive.png"
+		},
+		{
+			"id": 2,
+			"name": "Snowflake",
+			"logo": "https://galileo-viz.herokuapp.com/snowflake.png"
+		},
+		{
+			"id": 3,
+			"name": "Kafka",
+			"logo": "https://galileo-viz.herokuapp.com/kafka.png"
+		}
+	],
+
+	"business_units":   [
+    {
+				"id": 1,
+				"name": "Product Sales",
+				"feature_group_count": 5,
+				"feature_count": 23,
+				"model_count": 2,
+				"score": 0.88,
+				"change": 0.08,
+				"direction": "down",
+				"created": "2020-10-22",
+				"owner_image": "https://galileo-viz.herokuapp.com/user_1.png",
+				"daily_healthscore":
+        			{
+	      					"2020-01-01": 95,
+	      					"2020-01-02": 91,
+	      					"2020-01-03": 93,
+	      					"2020-01-04": 99,
+	      					"2020-01-05": 98,
+	      					"2020-01-06": 98,
+	      					"2020-01-07": 99,
+	      					"2020-01-08": 97,
+	      					"2020-01-09": 94,
+	      					"2020-01-10": 93,
+	      					"2020-01-11": 94,
+	      					"2020-01-12": 92,
+	      					"2020-01-13": 88,
+	      					"2020-01-14": 85,
+	      					"2020-01-15": 89,
+	      					"2020-01-16": 91,
+	      					"2020-01-17": 92,
+	      					"2020-01-18": 96,
+	      					"2020-01-19": 97,
+	      					"2020-01-20": 99
+							}
+		},
+
+    {
+        "id": 2,
+        "name": "Fraud",
+        "feature_group_count": 8,
+        "feature_count": 36,
+        "model_count": 4,
+        "score": 0.94,
+        "change": 0.02,
+        "direction": "up",
+        "created": "2020-10-20",
+        "owner_image": "https://galileo-viz.herokuapp.com/user_1.png",
+        "daily_healthscore":
+              {
+                "2020-01-01": 82,
+                "2020-01-02": 81,
+                "2020-01-03": 83,
+                "2020-01-04": 88,
+                "2020-01-05": 88,
+                "2020-01-06": 88,
+                "2020-01-07": 88,
+                "2020-01-08": 87,
+                "2020-01-09": 84,
+                "2020-01-10": 83,
+                "2020-01-11": 84,
+                "2020-01-12": 82,
+                "2020-01-13": 88,
+                "2020-01-14": 85,
+                "2020-01-15": 88,
+                "2020-01-16": 81,
+                "2020-01-17": 82,
+                "2020-01-18": 86,
+                "2020-01-19": 87,
+                "2020-01-20": 88
+              }
+    },
+
+    {
+          "id": 3,
+          "name": "User Engagement",
+          "feature_group_count": 10,
+          "feature_count": 47,
+          "model_count": 5,
+          "score": 0.92,
+          "change": 0.12,
+          "direction": "up",
+          "created": "2020-10-1",
+          "owner_image": "https://galileo-viz.herokuapp.com/user_2.png",
+          "daily_healthscore":
+			          {
+			            "2020-01-01": 75,
+			            "2020-01-02": 71,
+			            "2020-01-03": 73,
+			            "2020-01-04": 79,
+			            "2020-01-05": 78,
+			            "2020-01-06": 78,
+			            "2020-01-07": 79,
+			            "2020-01-08": 77,
+			            "2020-01-09": 74,
+			            "2020-01-10": 73,
+			            "2020-01-11": 74,
+			            "2020-01-12": 72,
+			            "2020-01-13": 78,
+			            "2020-01-14": 75,
+			            "2020-01-15": 79,
+			            "2020-01-16": 71,
+			            "2020-01-17": 72,
+			            "2020-01-18": 76,
+			            "2020-01-19": 77,
+			            "2020-01-20": 79
+			          }
+    }
+],
+
+  "feature_groups": [
+    		{
+      				"id": 1,
+      				"name": "item_cost",
+              "tier": 1,
+              "business_unit": "Product Sales",
+              "availability": "Preparing",
+              "score": 0.86,
+              "change": 0.08,
+              "direction": "down",
+              "availability_from": "2020-10-22",
+              "availability_latest": "-",
+      				"feature_count": 22,
+      				"model_count": 0,
+      				"owner_image": "https://galileo-viz.herokuapp.com/user_1.png",
+      				"daily_healthscore":
+			              {
+			      					"2020-01-01": 65,
+			      					"2020-01-02": 61,
+			      					"2020-01-03": 63,
+			      					"2020-01-04": 69,
+			      					"2020-01-05": 68,
+			      					"2020-01-06": 68,
+			      					"2020-01-07": 69,
+			      					"2020-01-08": 67,
+			      					"2020-01-09": 64,
+			      					"2020-01-10": 63,
+			      					"2020-01-11": 64,
+			      					"2020-01-12": 62,
+			      					"2020-01-13": 68,
+			      					"2020-01-14": 65,
+			      					"2020-01-15": 69,
+			      					"2020-01-16": 61,
+			      					"2020-01-17": 62,
+			      					"2020-01-18": 66,
+			      					"2020-01-19": 67,
+			      					"2020-01-20": 69
+			      				},
+              "duplicates": "5%",
+              "consistency": "99%",
+              "completeness": "98%",
+      				"features":
+				          	[
+				              {"name":"item_sold_count_last_2_days",
+				                "type": "Numeric"
+				              },
+				              {"name":"item_discount_avg",
+				                "type": "Categorical"
+				              },
+				              {"name":"user_txns_count_5_mins_ago",
+				                "type": "Numeric"
+				              },
+				              {"name":"user_ltv_sum",
+				                "type": "Numeric"
+				              },
+				              {"name":"user_num_friends_1_day_ago",
+				                "type": "Categorical"
+				              }
+				            ]
+					},
+
+  			{
+              "id": 2,
+              "name": "item_discount",
+              "tier": 1,
+              "business_unit": "Product Sales",
+              "availability": "Preparing",
+              "score": 0.94,
+              "change": 0.02,
+              "direction": "up",
+              "availability_from": "2020-10-20",
+              "availability_latest": "-",
+              "feature_count": 25,
+              "model_count": 0,
+              "owner_image": "https://galileo-viz.herokuapp.com/user_1.png",
+              "daily_healthscore":
+              {
+                "2020-01-01": 95,
+                "2020-01-02": 91,
+                "2020-01-03": 93,
+                "2020-01-04": 99,
+                "2020-01-05": 98,
+                "2020-01-06": 98,
+                "2020-01-07": 99,
+                "2020-01-08": 97,
+                "2020-01-09": 94,
+                "2020-01-10": 93,
+                "2020-01-11": 94,
+                "2020-01-12": 92,
+                "2020-01-13": 88,
+                "2020-01-14": 85,
+                "2020-01-15": 89,
+                "2020-01-16": 91,
+                "2020-01-17": 92,
+                "2020-01-18": 96,
+                "2020-01-19": 97,
+                "2020-01-20": 99
+              },
+              "duplicates": "5%",
+              "consistency": "99%",
+              "completeness": "98%",
+      				"features":
+			           	[
+			              {"name":"item_sold_count_last_2_days",
+			                "type": "Numeric"
+			              },
+			              {"name":"item_discount_avg",
+			                "type": "Categorical"
+			              },
+			              {"name":"user_txns_count_5_mins_ago",
+			                "type": "Numeric"
+			              },
+			              {"name":"user_ltv_sum",
+			                "type": "Numeric"
+			              },
+			              {"name":"user_num_friends_1_day_ago",
+			                "type": "Categorical"
+			              }
+			            ]
+    			},
+
+    		{
+              "id": 3,
+              "name": "user_risk",
+              "tier": 1,
+              "business_unit": "Fraud",
+              "availability": "Disabled",
+              "score": "-",
+              "change": "-",
+              "direction": "-",
+              "availability_from": "2020-10-1",
+              "availability_latest": "Today",
+              "feature_count": 27,
+              "model_count": 1,
+              "owner_image": "https://galileo-viz.herokuapp.com/user_2.png",
+              "daily_healthscore":
+			              {
+			                "2020-01-01": 95,
+			                "2020-01-02": 91,
+			                "2020-01-03": 93,
+			                "2020-01-04": 99,
+			                "2020-01-05": 98,
+			                "2020-01-06": 98,
+			                "2020-01-07": 99,
+			                "2020-01-08": 97,
+			                "2020-01-09": 94,
+			                "2020-01-10": 93,
+			                "2020-01-11": 94,
+			                "2020-01-12": 92,
+			                "2020-01-13": 88,
+			                "2020-01-14": 85,
+			                "2020-01-15": 89,
+			                "2020-01-16": 91,
+			                "2020-01-17": 92,
+			                "2020-01-18": 96,
+			                "2020-01-19": 97,
+			                "2020-01-20": 99
+			              },
+              "duplicates": "5%",
+              "consistency": "99%",
+              "completeness": "98%",
+      				"features":
+				            [
+				              {"name":"item_sold_count_last_2_days",
+				                "type": "Numeric"
+				              },
+				              {"name":"item_discount_avg",
+				                "type": "Categorical"
+				              },
+				              {"name":"user_txns_count_5_mins_ago",
+				                "type": "Numeric"
+				              },
+				              {"name":"user_ltv_sum",
+				                "type": "Numeric"
+				              },
+				              {"name":"user_num_friends_1_day_ago",
+				                "type": "Categorical"
+				              }
+				            ]
+    				},
+
+    		{
+              "id": 4,
+              "name": "user_ltv",
+              "tier": 1,
+              "business_unit": "User Engagement",
+              "availability": "Enabled",
+              "score": 0.76,
+              "change": 0.00,
+              "direction": "-",
+              "availability_from": "2020-09-24",
+              "availability_latest": "Today",
+              "feature_count": 23,
+              "model_count": 8,
+              "owner_image": "https://galileo-viz.herokuapp.com/user_3.png",
+              "daily_healthscore":
+			              {
+			                "2020-01-01": 85,
+			                "2020-01-02": 81,
+			                "2020-01-03": 83,
+			                "2020-01-04": 89,
+			                "2020-01-05": 88,
+			                "2020-01-06": 88,
+			                "2020-01-07": 89,
+			                "2020-01-08": 87,
+			                "2020-01-09": 84,
+			                "2020-01-10": 83,
+			                "2020-01-11": 84,
+			                "2020-01-12": 82,
+			                "2020-01-13": 88,
+			                "2020-01-14": 85,
+			                "2020-01-15": 89,
+			                "2020-01-16": 81,
+			                "2020-01-17": 82,
+			                "2020-01-18": 86,
+			                "2020-01-19": 87,
+			                "2020-01-20": 99
+			              },
+              "duplicates": "5%",
+              "consistency": "99%",
+              "completeness": "98%",
+							"features":
+				            [
+				              {"name":"item_sold_count_last_2_days",
+				                "type": "Numeric"
+				              },
+				              {"name":"item_discount_avg",
+				                "type": "Categorical"
+				              },
+				              {"name":"user_txns_count_5_mins_ago",
+				                "type": "Numeric"
+				              },
+				              {"name":"user_ltv_sum",
+				                "type": "Numeric"
+				              },
+				              {"name":"user_num_friends_1_day_ago",
+				                "type": "Categorical"
+				              }
+				            ]
+    				},
+
+				{
+              "id": 5,
+              "name": "user_txn",
+              "tier": 1,
+              "business_unit": "User Engagement",
+              "availability": "Enabled",
+              "score": 0.65,
+              "change": 0.18,
+              "direction": "down",
+              "availability_from": "2020-09-25",
+              "availability_latest": "Today",
+              "feature_count": 36,
+              "model_count": 6,
+              "owner_image": "https://galileo-viz.herokuapp.com/user_4.png",
+			              "daily_healthscore":
+			              {
+			                "2020-01-01": 55,
+			                "2020-01-02": 51,
+			                "2020-01-03": 53,
+			                "2020-01-04": 59,
+			                "2020-01-05": 58,
+			                "2020-01-06": 58,
+			                "2020-01-07": 59,
+			                "2020-01-08": 57,
+			                "2020-01-09": 54,
+			                "2020-01-10": 53,
+			                "2020-01-11": 54,
+			                "2020-01-12": 52,
+			                "2020-01-13": 58,
+			                "2020-01-14": 55,
+			                "2020-01-15": 59,
+			                "2020-01-16": 51,
+			                "2020-01-17": 52,
+			                "2020-01-18": 56,
+			                "2020-01-19": 57,
+			                "2020-01-20": 99
+			              },
+              "duplicates": "5%",
+              "consistency": "99%",
+              "completeness": "98%",
+      "features":
+            [
+              {"name":"item_sold_count_last_2_days",
+                "type": "Numeric"
+              },
+              {"name":"item_discount_avg",
+                "type": "Categorical"
+              },
+              {"name":"user_txns_count_5_mins_ago",
+                "type": "Numeric"
+              },
+              {"name":"user_ltv_sum",
+                "type": "Numeric"
+              },
+              {"name":"user_num_friends_1_day_ago",
+                "type": "Categorical"
+              }
+            ]
+    },
+
+				{
+							"id": 6,
+							"name": "purchase_agg",
+							"tier": 2,
+							"business_unit": "Fraud",
+							"availability": "Enabled",
+							"score": 0.99,
+							"change": 0.12,
+							"direction": "up",
+							"availability_from": "2019-06-23",
+							"availability_latest": "2020-10-16",
+							"feature_count": 82,
+							"model_count": 17,
+							"owner_image": "https://galileo-viz.herokuapp.com/user_3.png",
+							"daily_healthscore":
+											{
+												"2020-01-01": 95,
+												"2020-01-02": 91,
+												"2020-01-03": 93,
+												"2020-01-04": 99,
+												"2020-01-05": 98,
+												"2020-01-06": 98,
+												"2020-01-07": 99,
+												"2020-01-08": 97,
+												"2020-01-09": 94,
+												"2020-01-10": 93,
+												"2020-01-11": 94,
+												"2020-01-12": 92,
+												"2020-01-13": 88,
+												"2020-01-14": 85,
+												"2020-01-15": 89,
+												"2020-01-16": 91,
+												"2020-01-17": 92,
+												"2020-01-18": 96,
+												"2020-01-19": 97,
+												"2020-01-20": 99
+											},
+							"duplicates": "5%",
+							"consistency": "99%",
+							"completeness": "98%",
+							"features":
+									[
+										{"name":"item_sold_count_last_2_days",
+											"type": "Numeric"
+										},
+										{"name":"item_discount_avg",
+											"type": "Categorical"
+										},
+										{"name":"user_txns_count_5_mins_ago",
+											"type": "Numeric"
+										},
+										{"name":"user_ltv_sum",
+											"type": "Numeric"
+										},
+										{"name":"user_num_friends_1_day_ago",
+											"type": "Categorical"
+										}
+									]
+					},
+
+				{
+							"id": 7,
+							"name": "cost_savings",
+							"tier": 2,
+							"business_unit": "Fraud",
+							"availability": "Enabled",
+							"score": 0.98,
+							"change": 0.01,
+							"direction": "down",
+							"availability_from": "2019-06-23",
+							"availability_latest": "2020-10-16",
+							"feature_count": 45,
+							"model_count": 14,
+							"owner_image": "https://galileo-viz.herokuapp.com/user_2.png",
+							"daily_healthscore":
+										{
+											"2020-01-01": 75,
+											"2020-01-02": 71,
+											"2020-01-03": 73,
+											"2020-01-04": 79,
+											"2020-01-05": 78,
+											"2020-01-06": 78,
+											"2020-01-07": 79,
+											"2020-01-08": 77,
+											"2020-01-09": 74,
+											"2020-01-10": 73,
+											"2020-01-11": 74,
+											"2020-01-12": 72,
+											"2020-01-13": 78,
+											"2020-01-14": 75,
+											"2020-01-15": 79,
+											"2020-01-16": 71,
+											"2020-01-17": 72,
+											"2020-01-18": 76,
+											"2020-01-19": 77,
+											"2020-01-20": 99
+										},
+							"duplicates": "5%",
+							"consistency": "99%",
+							"completeness": "98%",
+							"features":
+										[
+											{"name":"item_sold_count_last_2_days",
+												"type": "Numeric"
+											},
+											{"name":"item_discount_avg",
+												"type": "Categorical"
+											},
+											{"name":"user_txns_count_5_mins_ago",
+												"type": "Numeric"
+											},
+											{"name":"user_ltv_sum",
+												"type": "Numeric"
+											},
+											{"name":"user_num_friends_1_day_ago",
+												"type": "Categorical"
+											}
+										]
+						},
+
+				{
+							"id": 8,
+							"name": "user_tenure",
+							"tier": 3,
+							"business_unit": "User Engagement",
+							"availability": "Disabled",
+							"score": 0.98,
+							"change": 0.01,
+							"direction": "down",
+							"availability_from": "2019-06-23",
+							"availability_latest": "2020-10-14",
+							"feature_count": 14,
+							"model_count": 2,
+							"owner_image": "https://galileo-viz.herokuapp.com/user_2.png",
+							"daily_healthscore":
+										{
+											"2020-01-01": 95,
+											"2020-01-02": 91,
+											"2020-01-03": 93,
+											"2020-01-04": 99,
+											"2020-01-05": 98,
+											"2020-01-06": 98,
+											"2020-01-07": 99,
+											"2020-01-08": 97,
+											"2020-01-09": 94,
+											"2020-01-10": 93,
+											"2020-01-11": 94,
+											"2020-01-12": 92,
+											"2020-01-13": 88,
+											"2020-01-14": 85,
+											"2020-01-15": 89,
+											"2020-01-16": 91,
+											"2020-01-17": 92,
+											"2020-01-18": 96,
+											"2020-01-19": 97,
+											"2020-01-20": 99
+										},
+							"duplicates": "5%",
+							"consistency": "99%",
+							"completeness": "98%",
+							"features":
+									[
+										{"name":"item_sold_count_last_2_days",
+											"type": "Numeric"
+										},
+										{"name":"item_discount_avg",
+											"type": "Categorical"
+										},
+										{"name":"user_txns_count_5_mins_ago",
+											"type": "Numeric"
+										},
+										{"name":"user_ltv_sum",
+											"type": "Numeric"
+										},
+										{"name":"user_num_friends_1_day_ago",
+											"type": "Categorical"
+										}
+									]
+						}
+  ],
+
+  "model_insights":	[
+					{
+								"id": 1,
+								"name": "item_cost_predict",
+								"type": "XG Boost",
+								"availability": "Training",
+								"feature_count": 25,
+								"score": 0.86,
+								"change": 0.08,
+								"direction": "down",
+								"impact_score": 0.92,
+								"impact_change": 0.08,
+								"impact_direction": "down",
+								"daily_healthscore":
+											{
+												"2020-01-01": 85,
+												"2020-01-02": 81,
+												"2020-01-03": 83,
+												"2020-01-04": 89,
+												"2020-01-05": 88,
+												"2020-01-06": 88,
+												"2020-01-07": 89,
+												"2020-01-08": 87,
+												"2020-01-09": 84,
+												"2020-01-10": 83,
+												"2020-01-11": 84,
+												"2020-01-12": 82,
+												"2020-01-13": 88,
+												"2020-01-14": 85,
+												"2020-01-15": 89,
+												"2020-01-16": 81,
+												"2020-01-17": 82,
+												"2020-01-18": 86,
+												"2020-01-19": 87,
+												"2020-01-20": 89
+											},
+								"duplicates": "5%",
+								"consistency": "99%",
+								"completeness": "98%",
+								"feature group": 15,
+								"features":
+											[
+												{"name":"item_sold_count_last_2_days",
+													"impact_score": 0.25
+												},
+												{"name":"item_discount_avg",
+													"impact_score": 0.50
+												},
+												{"name":"user_txns_count_5_mins_ago",
+													"impact_score": 0.65
+												},
+												{"name":"user_ltv_sum",
+													"impact_score": 0.85
+												},
+												{"name":"user_num_friends_1_day_ago",
+													"impact_score": 0.75
+												}
+											]
+							},
+
+					{
+								"id": 2,
+								"name": "item_discount_optimize",
+								"type": "Linear regression",
+								"availability": "Training",
+								"feature_count": 42,
+								"score": 0.94,
+								"change": 0.02,
+								"direction": "up",
+								"impact_score": 0.98,
+								"impact_change": 0.02,
+								"impact_direction": "up",
+								"daily_healthscore":
+										{
+											"2020-01-01": 95,
+											"2020-01-02": 91,
+											"2020-01-03": 93,
+											"2020-01-04": 99,
+											"2020-01-05": 98,
+											"2020-01-06": 98,
+											"2020-01-07": 99,
+											"2020-01-08": 97,
+											"2020-01-09": 94,
+											"2020-01-10": 93,
+											"2020-01-11": 94,
+											"2020-01-12": 92,
+											"2020-01-13": 88,
+											"2020-01-14": 85,
+											"2020-01-15": 89,
+											"2020-01-16": 91,
+											"2020-01-17": 92,
+											"2020-01-18": 96,
+											"2020-01-19": 97,
+											"2020-01-20": 99
+										},
+								"feature group":8,
+						 		"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+						},
+
+					{
+								"id": 3,
+								"name": "user_risk_predict",
+								"type": "Logistic regression",
+								"availability": "Disabled",
+								"feature_count": 5,
+								"score": 0,
+								"change": 0,
+								"direction": "-",
+								"impact_score": 0,
+								"impact_change": 0,
+								"impact_direction": "-",
+								"daily_healthscore":
+											{
+												"2020-01-01": 75,
+												"2020-01-02": 71,
+												"2020-01-03": 73,
+												"2020-01-04": 79,
+												"2020-01-05": 78,
+												"2020-01-06": 78,
+												"2020-01-07": 79,
+												"2020-01-08": 77,
+												"2020-01-09": 74,
+												"2020-01-10": 73,
+												"2020-01-11": 74,
+												"2020-01-12": 72,
+												"2020-01-13": 78,
+												"2020-01-14": 75,
+												"2020-01-15": 79,
+												"2020-01-16": 71,
+												"2020-01-17": 72,
+												"2020-01-18": 76,
+												"2020-01-19": 77,
+												"2020-01-20": 79
+											},
+								"duplicates": "26%",
+								"consistency": "62%",
+								"completeness": "90%",
+								"feature group": 10,
+								"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+								},
+						{
+								"id": 4,
+								"name": "user_ltv_predict",
+								"type": "Naive Bayes",
+								"availability": "Production",
+								"feature_count": 23,
+								"score": 0.76,
+								"change": 0.00,
+								"direction": "-",
+								"impact_score": 0.3,
+								"impact_change": 0.0,
+								"impact_direction": "-",
+								"daily_healthscore":
+											{
+												"2020-01-01": 55,
+												"2020-01-02": 51,
+												"2020-01-03": 53,
+												"2020-01-04": 59,
+												"2020-01-05": 58,
+												"2020-01-06": 58,
+												"2020-01-07": 59,
+												"2020-01-08": 57,
+												"2020-01-09": 54,
+												"2020-01-10": 53,
+												"2020-01-11": 54,
+												"2020-01-12": 52,
+												"2020-01-13": 58,
+												"2020-01-14": 55,
+												"2020-01-15": 59,
+												"2020-01-16": 51,
+												"2020-01-17": 52,
+												"2020-01-18": 56,
+												"2020-01-19": 57,
+												"2020-01-20": 59
+											},
+								"duplicates": "15%",
+								"consistency": "88%",
+								"completeness": "97%",
+								"feature group": 14,
+								"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+							},
+						{
+								"id": 5,
+								"name": "user_txn_likelihood",
+								"type": "XG Boost",
+								"availability": "Production",
+								"feature_count": 24,
+								"score": 0.65,
+								"change": 0.18,
+								"direction": "down",
+								"impact_score": 0.2,
+								"impact_change": 0.18,
+								"impact_direction": "down",
+								"daily_healthscore":
+											{
+												"2020-01-01": 85,
+												"2020-01-02": 81,
+												"2020-01-03": 83,
+												"2020-01-04": 89,
+												"2020-01-05": 88,
+												"2020-01-06": 88,
+												"2020-01-07": 89,
+												"2020-01-08": 87,
+												"2020-01-09": 84,
+												"2020-01-10": 83,
+												"2020-01-11": 84,
+												"2020-01-12": 82,
+												"2020-01-13": 88,
+												"2020-01-14": 85,
+												"2020-01-15": 89,
+												"2020-01-16": 81,
+												"2020-01-17": 82,
+												"2020-01-18": 86,
+												"2020-01-19": 87,
+												"2020-01-20": 89
+											},
+								"duplicates": "23%",
+								"consistency": "99%",
+								"completeness": "99%",
+								"feature group": 12,
+								"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+						},
+						{
+								"id": 6,
+								"name": "purchase_likelihood",
+								"type": "Logistic Regression",
+								"availability": "Production",
+								"feature_count": 67,
+								"score": 0.99,
+								"change": 0.12,
+								"direction": "up",
+								"impact_score": 0.97,
+								"impact_change": 0.12,
+								"impact_direction": "up",
+								"daily_healthscore":
+											{
+												"2020-01-01": 95,
+												"2020-01-02": 91,
+												"2020-01-03": 93,
+												"2020-01-04": 99,
+												"2020-01-05": 98,
+												"2020-01-06": 98,
+												"2020-01-07": 99,
+												"2020-01-08": 97,
+												"2020-01-09": 94,
+												"2020-01-10": 93,
+												"2020-01-11": 94,
+												"2020-01-12": 92,
+												"2020-01-13": 88,
+												"2020-01-14": 85,
+												"2020-01-15": 89,
+												"2020-01-16": 91,
+												"2020-01-17": 92,
+												"2020-01-18": 96,
+												"2020-01-19": 97,
+												"2020-01-20": 99
+											},
+								"duplicates": "8%",
+								"consistency": "98%",
+								"completeness": "97%",
+								"feature group": 8,
+								"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+							},
+						{
+								"id": 7,
+								"name": "cost_savings_predict",
+								"type": "Decision Tree",
+								"availability": "Production",
+								"feature_count": 15,
+								"score": 0.98,
+								"change": 0.01,
+								"direction": "down",
+								"impact_score": 0.95,
+								"impact_change": 0.01,
+								"impact_direction": "down",
+								"daily_healthscore":
+											{
+												"2020-01-01": 55,
+												"2020-01-02": 51,
+												"2020-01-03": 53,
+												"2020-01-04": 59,
+												"2020-01-05": 58,
+												"2020-01-06": 58,
+												"2020-01-07": 59,
+												"2020-01-08": 57,
+												"2020-01-09": 54,
+												"2020-01-10": 53,
+												"2020-01-11": 54,
+												"2020-01-12": 52,
+												"2020-01-13": 58,
+												"2020-01-14": 55,
+												"2020-01-15": 59,
+												"2020-01-16": 51,
+												"2020-01-17": 52,
+												"2020-01-18": 56,
+												"2020-01-19": 57,
+												"2020-01-20": 59
+											},
+								"duplicates": "3%",
+								"consistency": "99%",
+								"completeness": "99%",
+								"feature group": 10,
+								"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+							},
+						{
+								"id": 8,
+								"name": "user_txn_value_predict",
+								"type": "Decision Tree",
+								"availability": "Disabled",
+								"feature_count": 1,
+								"score": 0,
+								"change": 0,
+								"direction": "-",
+								"impact_score": 0,
+								"impact_change": 0,
+								"impact_direction": "-",
+								"daily_healthscore":
+											{
+												"2020-01-01": 65,
+												"2020-01-02": 61,
+												"2020-01-03": 63,
+												"2020-01-04": 69,
+												"2020-01-05": 68,
+												"2020-01-06": 68,
+												"2020-01-07": 69,
+												"2020-01-08": 67,
+												"2020-01-09": 64,
+												"2020-01-10": 63,
+												"2020-01-11": 64,
+												"2020-01-12": 62,
+												"2020-01-13": 68,
+												"2020-01-14": 65,
+												"2020-01-15": 69,
+												"2020-01-16": 10,
+												"2020-01-17": 10,
+												"2020-01-18": 10,
+												"2020-01-19": 10,
+												"2020-01-20": 10
+											},
+								"duplicates": "5%",
+								"consistency": "97%",
+								"completeness": "96%",
+								"feature group": 10,
+								"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+							},
+							{
+								"id": 9,
+								"name": "merchant_profile",
+								"type": "Logistic Regression",
+								"availability": "Enabled",
+								"feature_count": 15,
+								"score": 0.88,
+								"change": 0.02,
+								"direction": "up",
+								"impact_score": 0.88,
+								"impact_change": 0.02,
+								"impact_direction": "up",
+								"daily_healthscore":
+											{
+												"2020-01-01": 45,
+												"2020-01-02": 41,
+												"2020-01-03": 43,
+												"2020-01-04": 49,
+												"2020-01-05": 48,
+												"2020-01-06": 48,
+												"2020-01-07": 49,
+												"2020-01-08": 47,
+												"2020-01-09": 44,
+												"2020-01-10": 43,
+												"2020-01-11": 44,
+												"2020-01-12": 42,
+												"2020-01-13": 48,
+												"2020-01-14": 45,
+												"2020-01-15": 49,
+												"2020-01-16": 40,
+												"2020-01-17": 40,
+												"2020-01-18": 40,
+												"2020-01-19": 40,
+												"2020-01-20": 40
+											},
+								"duplicates": "2%",
+								"consistency": "94%",
+								"completeness": "96%",
+								"feature group": 10,
+								"features": [
+									{
+										"name": "item_sold_count_last_2_days",
+										"impact_score": 0.25
+									},
+									{
+										"name": "item_discount_avg",
+										"impact_score": 0.50
+									},
+									{
+										"name": "user_txns_count_5_mins_ago",
+										"impact_score": 0.65
+									},
+									{
+										"name": "user_ltv_sum",
+										"impact_score": 0.85
+									},
+									{
+										"name": "user_num_friends_1_day_ago",
+										"impact_score": 0.75
+									}
+								]
+							},
+							{
+							 "id": "all",
+							 "name": "all model insights",
+							 "daily_healthscore":
+										 {
+											 "2020-01-01": 95,
+											 "2020-01-02": 91,
+											 "2020-01-03": 90,
+											 "2020-01-04": 86,
+											 "2020-01-05": 83,
+											 "2020-01-06": 80,
+											 "2020-01-07": 75,
+											 "2020-01-08": 70,
+											 "2020-01-09": 67,
+											 "2020-01-10": 62,
+											 "2020-01-11": 55,
+											 "2020-01-12": 50,
+											 "2020-01-13": 45,
+											 "2020-01-14": 40,
+											 "2020-01-15": 32,
+											 "2020-01-16": 30,
+											 "2020-01-17": 28,
+											 "2020-01-18": 27,
+											 "2020-01-19": 26,
+											 "2020-01-20": 24
+										 },
+							 "score": 0.94,
+							 "change": 0.02,
+							 "direction": "up",
+							 "impact_score": 0.23,
+							 "impact_change": 0.08,
+							 "impact_direction": "down",
+							 "feature_group": 23
+							 }
+  				],
+
+	"alerts": [
+
+		{"type": "user_risk",
+		"description": "Feature Group training/serving drift > 10%",
+		"timestamp": "15h"
+		},
+
+		{"type": "purchase_agg",
+		"description": "Feature pipeline breakage",
+		"timestamp": "2d"
+		},
+
+		{"type": "merchant_txn",
+		"description": "Feature Group cross-data-consistency <5%",
+		"timestamp": "3d"
+		},
+
+		{"type": "Product Sales",
+		"description": "Business Group health < 0.3",
+		"timestamp": "4d"
+		},
+
+		{"type": "user_txn",
+		"description": "90%+ Features are low-impact on the model",
+		"timestamp": "6d"
+		},
+
+		{"type": "cost_savings",
+		"description": "Feature drift > 93%",
+		"timestamp": "6d"
+		}
+	]
+
+}

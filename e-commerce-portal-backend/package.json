@@ -1,0 +1,21 @@
+{
+  "name": "mock_json_server",
+  "version": "1.0.0",
+  "description": "Run json-server --watch db.json. Go to localhost:3000 on your browser.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "deploy": "git push https://git.heroku.com/galileo-viz.git"
+  },
+  "keywords": [
+    "json-server,heroku, node, REST API"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "json-server": "^0.16.2",
+    "path": "^0.12.7"
+  }
+}

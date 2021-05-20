@@ -14,8 +14,7 @@ export default function (state = [], action) {
       return [...state, action.data];
 
     case EDIT_CART_DETAILS:
-      console.log(`action.data.id`, action.data.id);
-      return [action.data];
+      return [...state];
 
     case REMOVE_FROM_CART:
       return [
