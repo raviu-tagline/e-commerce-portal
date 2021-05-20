@@ -1,12 +1,14 @@
 import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addToCartAction,
   removeFromCartAction,
+  getCartDataAction,
 } from "../redux/actions/cartActions";
+import Cards from "../reusableComponents/Cards";
 import MainHeader from "../reusableComponents/headers/mainHeader";
 import History from "../reusableContents/history";
 
@@ -14,38 +16,32 @@ const Cart = () => {
   const cartData = useSelector((state) => state.cartData);
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
-  const [dataSet, setData] = useState();
   const [path, setPath] = useState("/");
   const [changePath, setChangePath] = useState(false);
+  const [noRec, setRec] = useState(false);
   let userData;
   let NoRec = "";
 
   useEffect(() => {
-    if (cartData.length == 0) {
-      fetch("http://localhost:3001/Cart", {
-        method: "get",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((res) =>
-        res.json().then((result) => {
-          setData(result);
-          dispatch(addToCartAction(result));
-        })
-      );
-    } else {
-      setData(cartData);
-    }
-  }, [dataSet]);
+    dispatch(getCartDataAction());
+  }, [dispatch]);
 
   const handleIncrement = (e, data) => {
-    data.count = data.count + 1;
-    data.price *= data.count;
+    data = {
+      ...data,
+      count: count + 1,
+      price: (count + 1) * data.price,
+    };
     setCount(data.count);
   };
 
   const handleDecrement = (e, data) => {
     if (data.count > 1) {
+      data = {
+        ...data,
+        count: data.count - 1,
+        price: (data.count - 1) / data.price,
+      };
       data.price /= data.count;
       data.count = data.count - 1;
     }
@@ -67,7 +63,6 @@ const Cart = () => {
   return (
     <>
       <MainHeader />
-      {console.log("cartData -- ", cartData)}
       <div className="col-12 row mt-3">
         <div
           className="col-8 ml-2"
@@ -75,12 +70,24 @@ const Cart = () => {
         >
           <h5>Cart List</h5>
           <div className="row mr-1">
-            {dataSet !== undefined ? (
-              dataSet.map((val, ind) => {
+            {!cartData && setRec(true)}
+            {cartData &&
+              cartData.map((val, ind) => {
                 return (
                   <>
                     <div className="pt-3">
-                      <Card>
+                      <Cards
+                        component="cart"
+                        header={val.name}
+                        imageUrl={val.image}
+                        content={val.content}
+                        price={val.price}
+                        id={val.id}
+                        count={val.count}
+                        handleIncrement={handleIncrement}
+                        handleDecrement={handleDecrement}
+                      />
+                      {/* <Card>
                         <Card.Header>{val.name}</Card.Header>
                         <div className="row">
                           <Card.Img
@@ -89,7 +96,6 @@ const Cart = () => {
                             className="ml-1 pt-1 col-sm-3"
                           />
                           <Card.Body className="col-sm-8">
-                            <Card.Text>{val.name}</Card.Text>
                             <Card.Text>{val.content}</Card.Text>
                             <Card.Text>Price: ${val.price}</Card.Text>
                             <div className="row pt-2 ml-0">
@@ -117,7 +123,7 @@ const Cart = () => {
                               <div
                                 className="remove-cart-btn pl-3 pt-1 ml-5"
                                 onClick={() =>
-                                  /*removeCartData(val.id)*/
+                                  /*removeCartData(val.id)
                                   dispatch(removeFromCartAction(val.id))
                                 }
                               >
@@ -126,18 +132,11 @@ const Cart = () => {
                             </div>
                           </Card.Body>
                         </div>
-                      </Card>
+                              </Card> */}
                     </div>
                   </>
                 );
-              })
-            ) : (
-              <>
-                <div>
-                  <p>No record found!</p>
-                </div>
-              </>
-            )}
+              })}
           </div>
         </div>
         <div className="col-3 sticky-top">
@@ -148,16 +147,19 @@ const Cart = () => {
             <div className="card-body">
               <div className="col-6">
                 Total (
-                {dataSet != undefined
-                  ? dataSet.length <= 1
-                    ? dataSet.length + " item"
-                    : dataSet.length + " items"
+                {cartData != undefined
+                  ? cartData.length <= 1
+                    ? cartData.length + " item"
+                    : cartData.length + " items"
                   : ""}
                 ):{" "}
                 <span className="float-right">
                   $
-                  {dataSet != undefined
-                    ? dataSet.reduce((prev, current) => prev + current.price, 0)
+                  {cartData != undefined
+                    ? cartData.reduce(
+                        (prev, current) => prev + current.price,
+                        0
+                      )
                     : ""}
                 </span>
               </div>

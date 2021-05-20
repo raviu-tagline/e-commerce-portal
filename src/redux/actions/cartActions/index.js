@@ -1,27 +1,31 @@
 import axiosApi from "../../../axiosLib";
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../../constants";
+import { ADD_TO_CART, GET_FROM_CART, REMOVE_FROM_CART } from "../../constants";
+
+export const getCartDataAction = (params) => async (dispatch, getState) => {
+  const state = getState();
+  let data;
+  let response = await fetchApiFunction("get");
+  data = response.data;
+  if (response.statusCode === 200) {
+    dispatch({
+      type: GET_FROM_CART,
+      data,
+    });
+  }
+};
 
 export const addToCartAction = (param) => async (dispatch, getState) => {
   const state = getState();
   let data;
-
-  if (state.cartData.length != 0) {
-    const response = await fetchApiFunction("post", param);
-    data = response.data;
-    if (response.statusCode == 201) {
-      dispatch({
-        type: ADD_TO_CART,
-        data,
-      });
-    } else {
-      alert(response.message);
-    }
-  } else {
-    data = param;
+  const response = await fetchApiFunction("post", param);
+  data = response.data;
+  if (response.statusCode == 201) {
     dispatch({
       type: ADD_TO_CART,
       data,
     });
+  } else {
+    alert(response.message);
   }
 };
 

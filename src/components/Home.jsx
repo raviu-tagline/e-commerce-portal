@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axiosApi from "../axiosLib";
 import MainHeader from "../reusableComponents/headers/mainHeader";
@@ -8,45 +7,69 @@ import { addToCartAction } from "../redux/actions/cartActions";
 import { useSelector, useDispatch } from "react-redux";
 import Cart from "./Cart";
 import NavBar from "../reusableComponents/headers/NavBar";
-import InfiniteScroll from "react-infinite-scroll-component";
+import Loader from "./Loader";
+import Cards from "../reusableComponents/Cards";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Home = (param) => {
   const [dataArr, setDataArr] = useState([]);
   const [item_count, setCount] = useState(0);
+  const [page, setPage] = useState(1);
+  const [loader, setLoader] = useState(true);
+  const [hasNext, setNext] = useState(true);
+  const limit = 12;
 
   const cartData = useSelector((state) => state.cartData);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect(async () => {
     let response;
-    async function fetchApi() {
-      response = await axiosApi(
-        "get",
-        process.env.REACT_APP_LOCAL_API_URL + "Product",
-        param,
-        false
-      );
 
-      if (response.statusCode === 200) {
-        setDataArr(response.data);
-      } else {
-        alert("error");
-      }
+    response = await axiosApi(
+      "get",
+      process.env.REACT_APP_LOCAL_API_URL +
+        `Product?_limit=${limit}&_page=${page}`,
+      param,
+      false
+    );
+
+    if (response.statusCode === 200 && response.data.length !== 0) {
+      setDataArr([...dataArr, ...response.data]);
+      setLoader(false);
+    } else {
+      setLoader(false);
+      setNext(false);
     }
-
-    fetchApi();
-  }, []);
+  }, [page]);
 
   const AddItem = (e, data) => {
     var id = e.target.getAttribute("id");
-    data.count = 1;
+    data = {
+      ...data,
+      count: 1,
+    };
 
     document.getElementById(id).disabled = true;
-    setCount(item_count + 1);
-
     dispatch(addToCartAction(data));
+    setCount(item_count + 1);
   };
 
+  const loadMore = () => {
+    if (hasNext) {
+      setLoader(true);
+      setPage(page + 1);
+    }
+  };
+
+  window.onscroll = function () {
+    if (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    ) {
+      loadMore();
+    }
+  };
   return (
     <>
       <MainHeader />
@@ -68,40 +91,40 @@ const Home = (param) => {
               />
             </Link>
             <div className="count-div">
-              <h6 className="cart-count">
-                {item_count == 0 ? "+" : item_count}
+              <h6 className="cart-count m-auto justify-content-center">
+                {item_count == 0 ? (
+                  <FontAwesomeIcon icon={faPlus} />
+                ) : (
+                  <strong>{item_count}</strong>
+                )}
               </h6>
             </div>
           </div>
         </div>
         <div className="row">
           {dataArr !== undefined
-            ? dataArr.map((data, val) => (
+            ? dataArr.map((val, ind) => (
                 <>
                   <div className="col-sm-3 p-3">
-                    <Card>
-                      <Card.Header>{data.name}</Card.Header>
-                      <Card.Img
-                        variant="top"
-                        className="ml-1 pt-1"
-                        src={data.imageUrl}
-                      />
-                      <Card.Body>
-                        <Card.Text>{data.content}</Card.Text>
-                        <Button
-                          variant="primary"
-                          id={data.id}
-                          data-value={data.price}
-                          onClick={(e) => AddItem(e, data)}
-                        >
-                          Buy ${data.price}
-                        </Button>
-                      </Card.Body>
-                    </Card>
+                    <Cards
+                      component="home"
+                      header={val.name}
+                      image={val.imageUrl}
+                      content={val.content}
+                      price={val.price}
+                      id={val.id}
+                      AddItem={AddItem}
+                    />
                   </div>
                 </>
               ))
             : ""}
+          {loader && <Loader />}
+          {!hasNext && (
+            <h1 className="my-2 justify-content-center mx-auto">
+              No more data
+            </h1>
+          )}
         </div>
       </div>
     </>
