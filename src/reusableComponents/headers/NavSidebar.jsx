@@ -1,8 +1,21 @@
 import React from "react";
 import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
 import { Component } from "react";
-import { faInbox, faMailBulk, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartPlus,
+  faInbox,
+  faLayerGroup,
+  faListAlt,
+  faMailBulk,
+  faPersonBooth,
+  faPlus,
+  faTags,
+  faUser,
+  faUserAlt,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 export default class NavSidebar extends Component {
   constructor(props) {
     super(props);
@@ -42,34 +55,83 @@ export default class NavSidebar extends Component {
           created={this.onCreate}
         >
           <div className="sidebar-header header-cover bg-light">
-            <a className="sidebar-brand">
-              <p>
+            <Link className="sidebar-brand" to="/admin/profile">
+              <span>
                 <FontAwesomeIcon icon={faUser} /> {this.state.name}
-              </p>
-            </a>
-            <a className="sidebar-brand">
-              <p>
+              </span>
+            </Link>
+            <Link className="sidebar-brand" to="/admin/profile">
+              <span>
                 <FontAwesomeIcon icon={faInbox} /> {this.state.username}
-              </p>
-            </a>
+              </span>
+            </Link>
           </div>
           <ul className="nav sidebar-nav">
             {this.state.role == "admin" ? (
               <>
                 <li>
-                  <a href="/create">
-                    <span className="e-text"> Add users</span>
-                  </a>
+                  <Link to="/admin/add-user/">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faUserAlt} />
+                      <span className="ml-3">Add User</span>
+                    </span>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
-                    <span className="e-text"> Inbox 2</span>
-                  </a>
+                  <Link to="/admin/users/">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faUsers} />
+                      <span className="ml-3">View Users</span>
+                    </span>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
-                    <span className="e-text"> Inbox 3</span>
-                  </a>
+                  <Link to="/admin/add-category">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faCartPlus} />
+                      <span className="ml-3">Add Category</span>
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/admin/categories">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faLayerGroup} />
+                      <span className="ml-3">View Categories</span>
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/admin/sub-categories">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faPlus} />
+                      <span className="ml-3">Add Sub Category</span>
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/admin/sub-categories">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faTags} />
+                      <span className="ml-3">View Sub Categories</span>
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/admin/sub-categories">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faPlus} />
+                      <span className="ml-3">Add Product</span>
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/admin/sub-categories">
+                    <span className="e-text">
+                      <FontAwesomeIcon icon={faTags} />
+                      <span className="ml-3">View Products</span>
+                    </span>
+                  </Link>
                 </li>
               </>
             ) : (

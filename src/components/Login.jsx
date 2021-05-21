@@ -51,7 +51,7 @@ const Login = (props) => {
     <>
       <div className="container">
         <div className="container-fluid col-6 mt-5">
-          <div className="card">
+          <div className="card shadow">
             <div className="card-title text-center">
               <h1>Login here</h1>
             </div>

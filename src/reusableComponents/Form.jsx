@@ -7,7 +7,7 @@ import { Form, Input } from "reactstrap";
 //     resolver: yupResolver(yupValidation()),
 //   }
 
-const Forms = ({ content, onSubmit }) => {
+const Forms = ({ content, onSubmit, isUpdate }) => {
   const { register, handleSubmit, errors } = useForm();
 
   return (

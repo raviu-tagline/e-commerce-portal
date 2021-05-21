@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import axiosApi from "../axiosLib";
 import {
   removeFromCartAction,
   getCartDataAction,
@@ -45,9 +46,14 @@ const Cart = () => {
     setCount(data.count);
   };
 
-  const handleClick = () => {
+  const handleClick = async (cartData) => {
+    console.log(`cartData`, cartData);
     if (localStorage.getItem("user-info")) {
       userData = JSON.parse(localStorage.getItem("user-info"));
+      // let response = await axiosApi(
+      //   "post",
+      //   process.env.REACT_APP_LOCAL_API_URL + "deleteCart"
+      // );
       alert("Purchase successfully done. Enjoy your day.");
 
       setPath(userData.role + "/dashboard");
@@ -122,7 +128,10 @@ const Cart = () => {
                 </span>
               </div>
               <hr />
-              <button className="btn btn-success" onClick={() => handleClick()}>
+              <button
+                className="btn btn-success"
+                onClick={() => handleClick(cartData)}
+              >
                 Proceed to Buy
               </button>
             </div>

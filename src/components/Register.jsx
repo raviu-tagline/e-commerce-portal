@@ -15,7 +15,7 @@ const Register = () => {
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       const useData = JSON.parse(localStorage.getItem("user-info"));
-      setPath(useData[0].role + "/dashboard");
+      setPath(useData.role + "/dashboard");
       setChangePath(true);
     }
   }, []);

@@ -12,6 +12,7 @@ import SupplierDash from "./components/Supplier/SupplierDash";
 import CustomerDash from "./components/Customer/CustomerDash";
 import ProtectedRoute from "./ProtectedRoute";
 import Cart from "./components/Cart";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -31,11 +32,21 @@ function App() {
           <Route path="/create">
             <Register />
           </Route>
+          <Route
+            path="/update/:id"
+            render={(props) => <Register id={props.match.params.id} />}
+          />
           <Route path="/cart">
             <Cart />
           </Route>
           <Route path="/admin/dashboard">
             <ProtectedRoute component={AdminDash} role="admin" />
+          </Route>
+          <Route path="/admin/users">
+            <ProtectedRoute component={AdminDash} role="admin" />
+          </Route>
+          <Route path="/:any/profile">
+            <Profile />
           </Route>
           {/* <Route path="/admin/manage-users">
             <ProtectedRoute component={AdminDash} role="admin" />

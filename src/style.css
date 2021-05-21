@@ -165,13 +165,15 @@ ul.nav.sidebar-nav {
 }
 
 a.sidebar-brand {
-  /* color: #ffffff; */
+  color: #21252a !important;
   font-size: 15px;
   text-decoration: none;
 }
 
 a.sidebar-brand:hover {
   text-decoration: none;
+  color: darkblue !important;
+  cursor: pointer;
 }
 
 .nav.sidebar-nav li:hover {
@@ -190,7 +192,7 @@ span.sf-icon-down.icon {
   display: block;
   height: 48px;
   line-height: 48px;
-  width: 241px;
+  width: 250px;
   padding: 0 56px 0 20px;
   text-decoration: none;
   font-weight: 500;
@@ -292,7 +294,7 @@ span.sf-icon-down.icon {
 }
 
 span.e-text {
-  color: #000000;
+  color: #6d767d;
 }
 
 .title {

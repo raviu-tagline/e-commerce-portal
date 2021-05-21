@@ -1,128 +1,141 @@
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faEdit,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "../../axiosLib";
-import React, { Component } from "react";
-import { Table } from "react-bootstrap";
-import MainHeader from "../../reusableComponents/headers/mainHeader";
-import NavBar from "../../reusableComponents/headers/NavBar";
-import NavSidebar from "../../reusableComponents/headers/NavSidebar";
+import React, { memo, useEffect, useState } from "react";
+import { Button, Table } from "react-bootstrap";
 import Links from "../Links";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getUserDetails,
+  deleteUserDetails,
+} from "../../redux/actions/userActions";
+import axiosApi from "../../axiosLib";
 
-export default class AdminDash extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: null,
-    };
-  }
+const AdminDash = () => {
+  const [data, setData] = useState(null);
+  const dispatch = useDispatch();
+  const userDetails = useSelector((state) => state.userDetails);
+  const [current, setCurrentPage] = useState(1);
+  const [pages, setPages] = useState(0);
+  const [limit, setLimit] = useState(10);
+  const [totalRec, setTotalRec] = useState(0);
 
-  componentDidMount() {
-    this.getApiData();
-  }
+  useEffect(() => {
+    fetch(process.env.REACT_APP_LOCAL_API_URL + "register?id_ne=1", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((resp) => resp.json().then((res) => setTotalRec(res.length)));
+    setPages(totalRec / limit);
 
-  deleteData(id) {
-    let response;
-    async function deleteApiData() {
-      response = await axios(
-        "delete",
-        process.env.REACT_APP_LOCAL_API_URL + "register/" + id
-      );
+    dispatch(getUserDetails(current, limit));
+  }, [dispatch, current, limit]);
 
-      if (response.statusCode === 200) {
-        alert("Record deleted");
-      }
-    }
-    if (id != 1) deleteApiData();
-    else alert("You can't delete admin profile");
-    this.getApiData();
-  }
+  const deleteData = (id) => {
+    dispatch(deleteUserDetails(id));
+  };
 
-  getApiData() {
-    let response;
-    async function apiData() {
-      response = await axios(
-        "get",
-        process.env.REACT_APP_LOCAL_API_URL + "register/",
-        [],
-        false
-      );
-      if (response.statusCode === 200) {
-        return response.data;
-      }
-    }
+  const handlePrevious = () => {
+    setCurrentPage(current - 1);
+  };
 
-    apiData().then((result) => this.setState({ data: result }));
-  }
-  render() {
-    return (
-      <>
-        <div className="container">
-          <div className="container-fluid">
-            <div className="card mt-5">
-              <div className="card-title">
-                <h1 className="text-center">Manage users</h1>
-              </div>
-              <div className="card-body">
-                <Table striped bordered hover>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>User Name</th>
-                      <th>User age</th>
-                      <th>User Mobile</th>
-                      <th>User Email</th>
-                      <th>User Role</th>
-                      <th colSpan="2">Operations</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.state.data !== null ? (
-                      this.state.data.map((item, i) =>
-                        item.role != "admin" ? (
-                          <tr>
-                            <td>{i}</td>
-                            <td>{item.name}</td>
-                            <td>{item.age}</td>
-                            <td>{item.number}</td>
-                            <td>{item.email}</td>
-                            <td>{item.role}</td>
-                            <td>
-                              <Links to={"/update/" + item.id}>
-                                <FontAwesomeIcon icon={faEdit} />
-                              </Links>
-                            </td>
-                            <td>
-                              <span onClick={() => this.deleteData(item.id)}>
-                                <FontAwesomeIcon
-                                  icon={faTrash}
-                                  color="blue"
-                                  style={{ cursor: "pointer" }}
-                                />
-                              </span>
-                            </td>
-                          </tr>
-                        ) : (
-                          ""
-                        )
+  const handleNext = () => {
+    setCurrentPage(current + 1);
+  };
+  return (
+    <>
+      <div className="container mx-auto justify-content-center">
+        <div className="container-fluid">
+          <div className="card mt-5 shadow">
+            <div className="card-title">
+              <h1 className="text-center">Manage users</h1>
+            </div>
+            <div className="card-body">
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                    <th>User age</th>
+                    <th>User Mobile</th>
+                    <th>User Email</th>
+                    <th>User Role</th>
+                    <th colSpan="2">Operations</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {userDetails.length !== 0 ? (
+                    userDetails.map((item, i) =>
+                      item.role != "admin" ? (
+                        <tr>
+                          <td>{item.id - 1}</td>
+                          <td>{item.name}</td>
+                          <td>{item.age}</td>
+                          <td>{item.number}</td>
+                          <td>{item.email}</td>
+                          <td>{item.role}</td>
+                          <td>
+                            <Links
+                              to={"/update/" + item.id}
+                              className="text-secondary"
+                            >
+                              <FontAwesomeIcon icon={faEdit} color="green" />
+                            </Links>
+                          </td>
+                          <td>
+                            <span onClick={() => deleteData(item.id)}>
+                              <FontAwesomeIcon
+                                icon={faTrash}
+                                color="red"
+                                style={{ cursor: "pointer" }}
+                              />
+                            </span>
+                          </td>
+                        </tr>
+                      ) : (
+                        ""
                       )
-                    ) : (
-                      <td
-                        colSpan="7"
-                        style={{
-                          textAlign: "center",
-                          background: "#f4f4f4",
-                        }}
-                      >
-                        No data found
-                      </td>
-                    )}
-                  </tbody>
-                </Table>
-              </div>
+                    )
+                  ) : (
+                    <td
+                      colSpan="7"
+                      style={{
+                        textAlign: "center",
+                        background: "#f4f4f4",
+                      }}
+                    >
+                      No data found
+                    </td>
+                  )}
+                </tbody>
+              </Table>
+              <Button
+                className="rounded-circle"
+                variant="secondary"
+                onClick={() => handlePrevious()}
+                disabled={current === 1 ? "true" : ""}
+              >
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </Button>
+              <Button
+                className="rounded-circle float-right"
+                variant="secondary"
+                onClick={() => handleNext()}
+                disabled={current === pages ? "true" : ""}
+              >
+                <FontAwesomeIcon icon={faAngleRight} />
+              </Button>
             </div>
           </div>
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
+export default memo(AdminDash);
