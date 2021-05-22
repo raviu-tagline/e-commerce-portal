@@ -70,7 +70,7 @@ export default class NavSidebar extends Component {
             {this.state.role == "admin" ? (
               <>
                 <li>
-                  <Link to="/admin/add-user/">
+                  <Link to="/admin/add-user">
                     <span className="e-text">
                       <FontAwesomeIcon icon={faUserAlt} />
                       <span className="ml-3">Add User</span>
@@ -78,7 +78,7 @@ export default class NavSidebar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/admin/users/">
+                  <Link to="/admin/users">
                     <span className="e-text">
                       <FontAwesomeIcon icon={faUsers} />
                       <span className="ml-3">View Users</span>
@@ -102,7 +102,7 @@ export default class NavSidebar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/admin/sub-categories">
+                  <Link to="/admin/add-sub-category">
                     <span className="e-text">
                       <FontAwesomeIcon icon={faPlus} />
                       <span className="ml-3">Add Sub Category</span>
@@ -118,7 +118,7 @@ export default class NavSidebar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/admin/sub-categories">
+                  <Link to="/admin/add-product">
                     <span className="e-text">
                       <FontAwesomeIcon icon={faPlus} />
                       <span className="ml-3">Add Product</span>
@@ -126,7 +126,7 @@ export default class NavSidebar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/admin/sub-categories">
+                  <Link to="/admin/products">
                     <span className="e-text">
                       <FontAwesomeIcon icon={faTags} />
                       <span className="ml-3">View Products</span>

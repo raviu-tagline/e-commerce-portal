@@ -46,11 +46,14 @@ function App() {
             <ProtectedRoute component={AdminDash} role="admin" />
           </Route>
           <Route path="/:any/profile">
-            <Profile />
+            <ProtectedRoute
+              component={Profile}
+              role={(props) => props.match.params.role}
+            />
           </Route>
-          {/* <Route path="/admin/manage-users">
+          <Route path="/admin/add-user">
             <ProtectedRoute component={AdminDash} role="admin" />
-          </Route> */}
+          </Route>
           <Route path="/supplier/dashboard">
             <ProtectedRoute component={SupplierDash} role="supplier" />
           </Route>
