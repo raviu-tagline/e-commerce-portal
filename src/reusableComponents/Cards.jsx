@@ -17,6 +17,7 @@ const Cards = (props) => {
             className={
               props.component == "cart" ? "ml-1 pt-1 col-sm-3" : "ml-1 pt-1"
             }
+            alt="Please check your internet"
           />
           <Card.Body className={props.component == "cart" ? "col-sm-8" : ""}>
             <Card.Text>{props.content}</Card.Text>

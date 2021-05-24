@@ -17,6 +17,7 @@ const Cart = () => {
   const [path, setPath] = useState("/");
   const [changePath, setChangePath] = useState(false);
   const [noRec, setRec] = useState(false);
+  const [ids, setIDs] = useState([]);
   let userData;
   let NoRec = "";
 
@@ -50,12 +51,8 @@ const Cart = () => {
     console.log(`cartData`, cartData);
     if (localStorage.getItem("user-info")) {
       userData = JSON.parse(localStorage.getItem("user-info"));
-      // let response = await axiosApi(
-      //   "post",
-      //   process.env.REACT_APP_LOCAL_API_URL + "deleteCart"
-      // );
-      alert("Purchase successfully done. Enjoy your day.");
 
+      console.log(`response`, ids);
       setPath(userData.role + "/dashboard");
     } else {
       setPath("/login");
@@ -86,7 +83,7 @@ const Cart = () => {
                       <Cards
                         component="cart"
                         header={val.header}
-                        image={val.image}
+                        image={"images/cart_images/" + val.image}
                         content={val.content}
                         price={val.price}
                         actualPrice={val.actualPrice}

@@ -13,6 +13,8 @@ import CustomerDash from "./components/Customer/CustomerDash";
 import ProtectedRoute from "./ProtectedRoute";
 import Cart from "./components/Cart";
 import Profile from "./components/Profile";
+import Users from "./components/Common/Users";
+import Categories from "./components/Common/Categories";
 
 function App() {
   return (
@@ -42,8 +44,17 @@ function App() {
           <Route path="/admin/dashboard">
             <ProtectedRoute component={AdminDash} role="admin" />
           </Route>
-          <Route path="/admin/users">
-            <ProtectedRoute component={AdminDash} role="admin" />
+          <Route path="/:any/users">
+            <ProtectedRoute
+              component={Users}
+              role={(props) => props.match.params.role}
+            />
+          </Route>
+          <Route path="/:any/categories">
+            <ProtectedRoute
+              component={Categories}
+              role={(props) => props.match.params.role}
+            />
           </Route>
           <Route path="/:any/profile">
             <ProtectedRoute

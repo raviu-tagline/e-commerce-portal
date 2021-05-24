@@ -5,12 +5,12 @@ import axiosApi from "../axiosLib";
 import MainHeader from "../reusableComponents/headers/mainHeader";
 import { addToCartAction } from "../redux/actions/cartActions";
 import { useSelector, useDispatch } from "react-redux";
-import Cart from "./Cart";
 import NavBar from "../reusableComponents/headers/NavBar";
 import Loader from "./Loader";
 import Cards from "../reusableComponents/Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus, faPlus } from "@fortawesome/free-solid-svg-icons";
+// import imgPath from "../images/";
 
 const Home = (param) => {
   const [dataArr, setDataArr] = useState([]);
@@ -86,24 +86,24 @@ const Home = (param) => {
           </div>
           <div className="col-3">
             <Link to="/cart" params={cartData}>
-              <img
-                src={process.env.PUBLIC_URL + "/logo.png"}
-                alt="Add to cart"
-                width="15px"
-                height="15px"
-                style={{ float: "right" }}
-                className="cart-image"
+              <FontAwesomeIcon
+                icon={faCartPlus}
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  float: "right",
+                }}
               />
+              <div className="count-div">
+                <h6 className="cart-count m-auto justify-content-center">
+                  {item_count == 0 ? (
+                    <FontAwesomeIcon icon={faPlus} />
+                  ) : (
+                    <strong>{item_count}</strong>
+                  )}
+                </h6>
+              </div>
             </Link>
-            <div className="count-div">
-              <h6 className="cart-count m-auto justify-content-center">
-                {item_count == 0 ? (
-                  <FontAwesomeIcon icon={faPlus} />
-                ) : (
-                  <strong>{item_count}</strong>
-                )}
-              </h6>
-            </div>
           </div>
         </div>
         <div className="row">
@@ -114,7 +114,7 @@ const Home = (param) => {
                     <Cards
                       component="home"
                       header={val.name}
-                      image={val.imageUrl}
+                      image={"images/product_images/" + val.imageName}
                       content={val.content}
                       price={val.price}
                       id={val.id}

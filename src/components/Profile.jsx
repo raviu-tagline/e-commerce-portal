@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import imgPath from "../images/default-avtar.png";
 
 const Profile = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -21,7 +20,7 @@ const Profile = () => {
           <div className="row">
             <div className="col-6">
               <img
-                src={imgPath}
+                src="images/default-avtar.png"
                 alt="profile image"
                 style={{
                   width: "100%",

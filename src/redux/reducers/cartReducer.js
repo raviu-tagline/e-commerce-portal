@@ -18,7 +18,7 @@ export default function (state = [], action) {
 
     case REMOVE_FROM_CART:
       return [
-        ...action.itemList.filter((obj, ind) => obj[ind].id != action.deleteId),
+        ...action.itemList.filter((obj, ind) => obj.id != action.deleteId),
       ];
 
     default:

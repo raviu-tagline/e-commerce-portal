@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import MainHeader from "./reusableComponents/headers/mainHeader";
 import NavSidebar from "./reusableComponents/headers/NavSidebar";
 import NavBar from "./reusableComponents/headers/NavBar";
+import Footer from "./reusableComponents/footer/Footer";
 
 const ProtectedRoute = (props) => {
   const history = useHistory();
@@ -30,6 +31,7 @@ const ProtectedRoute = (props) => {
           <Cmp />
         </>
       )}
+      <Footer />
     </>
   );
 };

@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar, NavLink, Button } from "react-bootstrap";
 import { faSignInAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ProfileImg from "./ProfileImg";
-import imgPath from "../../images/default-avtar.png";
-// import imgPath from "../../../images/default-avtar.png";
-// import logo from "../../../public/logo.png";
 
 const MainHeader = () => {
   let RenderComp = null;
@@ -20,7 +16,7 @@ const MainHeader = () => {
       <>
         <Nav.Link>
           <Link to={"/" + userData.role + "/dashboard"}>
-            <ProfileImg path={imgPath} />
+            <img src="/images/default-avtar.png" className="profile-image" />
           </Link>
           <Link to="/">
             <Button variant="outline-info" onClick={handleClick}>

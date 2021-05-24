@@ -155,13 +155,17 @@
 ul.nav.sidebar-nav {
   padding: 5px 0 5px 0;
   margin: 0px;
-  max-height: 625px;
+  max-height: 785px;
   overflow-y: auto;
 }
 
 .sidebar-nav {
   list-style: none;
   padding: 5px 0 5px 0;
+}
+
+.sidebar-header {
+  border-bottom: 0.1px solid lightgray;
 }
 
 a.sidebar-brand {
@@ -237,8 +241,12 @@ span.sf-icon-down.icon {
 
 #default-sidebar {
   color: #ffffff;
-  position: fixed;
+  position: absolute;
   overflow: hidden;
+  width: 251px !important;
+  z-index: 1000 !important;
+  border-right: 0.1px solid lightgrey !important;
+  height: 100% !important;
 }
 
 /* sample-level styles */

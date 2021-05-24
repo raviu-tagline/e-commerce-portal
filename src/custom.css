@@ -30,7 +30,8 @@ img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  margin-top: 3px;
+  position: absolute;
+  margin-left: 230px;
 }
 
 .count-div h6 {
@@ -56,4 +57,30 @@ div.sticky-top {
 
 h6 {
   font-size: 12px !important;
+}
+
+span svg {
+  cursor: pointer;
+}
+
+span svg[data-icon="eye"] {
+  color: blue;
+}
+
+span svg[data-icon="edit"] {
+  color: green;
+}
+span svg[data-icon="trash"] {
+  color: red;
+}
+span svg[data-icon="eye"]:hover {
+  color: darkblue;
+}
+
+span svg[data-icon="edit"]:hover {
+  color: darkgreen;
+}
+
+span svg[data-icon="trash"]:hover {
+  color: darkred;
 }

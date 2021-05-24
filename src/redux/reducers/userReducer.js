@@ -9,7 +9,6 @@ import {
 export default function (state = [], action) {
   switch (action.type) {
     case GET_USERS:
-      console.log(`action.data`, action.data);
       return [...action.data];
     case DELETE_USER:
       return [action.data];
