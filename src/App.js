@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import Helmet from "react-helmet";
 import Register from "./components/Register";
 import "./custom.css";
-import { ToastContainer } from "react-toastify";
+import { Slide, toast, ToastContainer } from "react-toastify";
 import AdminDash from "./components/Admin/AdminDash";
 import SupplierDash from "./components/Supplier/SupplierDash";
 import CustomerDash from "./components/Customer/CustomerDash";
@@ -86,6 +86,13 @@ function App() {
           </Route>*/}
         </Switch>
       </Router>
+      <ToastContainer
+        autoClose={1500}
+        hideProgressBar={true}
+        position={toast.POSITION.TOP_RIGHT}
+        newestOnTop={true}
+        transition={Slide}
+      />
     </div>
   );
 }

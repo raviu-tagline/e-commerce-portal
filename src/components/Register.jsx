@@ -29,11 +29,11 @@ const Register = () => {
     );
 
     if (statusCode === 201) {
-      alert("Record created");
+      toast.success("Record created");
       setPath("/");
       setChangePath(true);
     } else {
-      alert(message);
+      toast.error(message);
     }
   };
 

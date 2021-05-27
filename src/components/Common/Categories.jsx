@@ -2,6 +2,7 @@ import { faEdit, faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Modal, Table } from "react-bootstrap";
+import { toast } from "react-toastify";
 import axiosApi from "../../axiosLib";
 
 const Categories = () => {
@@ -19,7 +20,11 @@ const Categories = () => {
       setData(response.data);
       setShow(true);
     } else {
-      alert(response.message, " with response code ", response.statusCode);
+      toast.error(
+        response.message,
+        " with response code ",
+        response.statusCode
+      );
     }
   };
 
@@ -39,7 +44,7 @@ const Categories = () => {
       const data = response.data;
       setCatData(data);
     } else {
-      alert(response.message);
+      toast.error(response.message);
     }
   }, []);
   return (

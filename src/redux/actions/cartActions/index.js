@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import axiosApi from "../../../axiosLib";
 import {
   ADD_TO_CART,
@@ -50,7 +51,7 @@ export const addToCartAction = (param) => async (dispatch, getState) => {
       data,
     });
   } else {
-    alert(response.message);
+    toast.warn(response.message);
   }
 };
 

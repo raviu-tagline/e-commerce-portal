@@ -9,6 +9,7 @@ import {
 import Cards from "../reusableComponents/Cards";
 import MainHeader from "../reusableComponents/headers/mainHeader";
 import History from "../reusableContents/history";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const cartData = useSelector((state) => state.cartData);
@@ -48,13 +49,20 @@ const Cart = () => {
   };
 
   const handleClick = async (cartData) => {
-    console.log(`cartData`, cartData);
     if (localStorage.getItem("user-info")) {
       userData = JSON.parse(localStorage.getItem("user-info"));
-
       console.log(`response`, ids);
+
+      cartData.forEach((ele) => {
+        axiosApi(
+          "delete",
+          process.env.REACT_APP_LOCAL_API_URL + "Cart/" + ele.id
+        );
+      });
+      toast.success("Purchase done");
       setPath(userData.role + "/dashboard");
     } else {
+      toast.error("Login first to buy product.");
       setPath("/login");
     }
     setChangePath(true);
@@ -76,7 +84,7 @@ const Cart = () => {
           <div className="row mr-1">
             {!cartData && setRec(true)}
             {cartData &&
-              cartData.map((val, ind) => {
+              cartData.map((val) => {
                 return (
                   <>
                     <div className="pt-3">

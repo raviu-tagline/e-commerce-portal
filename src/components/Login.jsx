@@ -24,10 +24,7 @@ const Login = (props) => {
     );
 
     if (statusCode === 200 && data.length > 0) {
-      toast.success("login successful", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 1000,
-      });
+      toast.success("Login successful");
 
       const rest = { ...data };
       rest[0].password = "";
@@ -36,7 +33,7 @@ const Login = (props) => {
       setPath(rest[0].role + "/dashboard");
       setChangePath(true);
     } else {
-      alert("Check username and password");
+      toast.error("Check username and password");
     }
   };
 

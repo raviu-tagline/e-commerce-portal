@@ -15,6 +15,7 @@ import {
   editUserDetails,
 } from "../../redux/actions/userActions";
 import axiosApi from "../../axiosLib";
+import { toast } from "react-toastify";
 
 const Users = () => {
   const [data, setData] = useState(null);
@@ -40,7 +41,7 @@ const Users = () => {
     if (isUpdate) {
       dispatch(getUserDetails(current, limit));
       setUpdate(false);
-      alert(`Record updated successful`);
+      toast.success(`Record updated successfully`);
     }
   }, [dispatch, current, limit, totalRec, show, visible]);
 

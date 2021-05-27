@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar, NavLink, Button } from "react-bootstrap";
 import { faSignInAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toast } from "react-toastify";
+import History from "../../reusableContents/history";
 
 const MainHeader = () => {
   let RenderComp = null;
+  const [path, setPath] = useState("/");
+  const [changePath, setChangePath] = useState(false);
   function handleClick() {
-    localStorage.clear();
+    if (localStorage.getItem("user-info")) {
+      localStorage.clear();
+      toast.success("Logout successfully");
+      setChangePath(true);
+    }
   }
 
   if (localStorage.getItem("user-info")) {
@@ -58,6 +66,7 @@ const MainHeader = () => {
           <Nav>{RenderComp}</Nav>
         </Navbar.Collapse>
       </Navbar>
+      {changePath && <History path={path} />}
     </>
   );
 };

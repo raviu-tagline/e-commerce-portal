@@ -347,3 +347,11 @@ li.e-list-item {
 .e-content-animation {
   height: 477px;
 }
+
+.Toastify__toast-container {
+  width: 250px;
+}
+
+.Toastify__toast-container--top-right {
+  font-weight: 700;
+}
