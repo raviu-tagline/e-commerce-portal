@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axiosApi from "../axiosLib";
-import {
-  removeFromCartAction,
-  getCartDataAction,
-  editCartDataAction,
-} from "../redux/actions/cartActions";
+import { getCartDataAction } from "../redux/actions/cartActions";
+import { editCartDataAction } from "../redux/actions/cartActions";
+import { removeFromCartAction } from "../redux/actions/cartActions";
 import Cards from "../reusableComponents/Cards";
 import MainHeader from "../reusableComponents/headers/mainHeader";
 import History from "../reusableContents/history";
@@ -21,7 +19,6 @@ const Cart = () => {
   const [ids, setIDs] = useState([]);
   let userData;
   let NoRec = "";
-
   useEffect(() => {
     dispatch(getCartDataAction());
   }, [dispatch]);
@@ -89,6 +86,7 @@ const Cart = () => {
                   <>
                     <div className="pt-3">
                       <Cards
+                        key={val.id}
                         component="cart"
                         header={val.header}
                         image={"images/cart_images/" + val.image}

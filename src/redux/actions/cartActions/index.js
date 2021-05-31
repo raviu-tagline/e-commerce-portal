@@ -31,6 +31,7 @@ export const editCartDataAction = (params) => async (dispatch, getState) => {
     params.id
   );
   let data;
+  console.log(`data`, data);
   if (response.statusCode === 200) {
     let ind = state.cartData.findIndex((obj) => obj.id === response.data.id);
     state.cartData[ind] = response.data;
@@ -42,8 +43,9 @@ export const editCartDataAction = (params) => async (dispatch, getState) => {
 
 export const addToCartAction = (param) => async (dispatch, getState) => {
   const state = getState();
-  let data;
   const response = await fetchApiFunction("post", param);
+  let data;
+  console.log(`data`, data);
   data = response.data;
   if (response.statusCode == 201) {
     dispatch({
@@ -54,7 +56,6 @@ export const addToCartAction = (param) => async (dispatch, getState) => {
     toast.warn(response.message);
   }
 };
-
 export const removeFromCartAction =
   (deleteId) => async (dispatch, getState) => {
     const state = getState();

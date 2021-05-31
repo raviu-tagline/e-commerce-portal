@@ -118,3 +118,7 @@ app.delete("/deleteAll/cart", (req, res) => {
     res.send(resp.deletedCount + " Records deleted");
   });
 });
+
+app.delete("/cart", (req, res) => {
+  database.collection("tbl_cart").deleteOne;
+});
