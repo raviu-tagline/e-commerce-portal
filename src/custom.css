@@ -1,0 +1,85 @@
+.card {
+  /* border: none !important; */
+}
+
+hr {
+  margin-top: 0rem !important;
+}
+
+a.Nav-link:hover {
+  text-decoration: none;
+}
+
+.btn strong {
+  color: white !important;
+}
+
+img {
+  width: 40px;
+  padding-right: 10px;
+}
+
+.cart-image {
+  cursor: pointer;
+}
+
+.count-div {
+  display: flex;
+  background-color: gray;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 230px;
+}
+
+.count-div h6 {
+  color: white;
+}
+
+.remove-cart-btn {
+  color: #f34a4a;
+}
+
+.remove-cart-btn:hover {
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: auto;
+  padding-bottom: 5px;
+}
+
+div.sticky-top {
+  align-self: flex-start;
+}
+
+h6 {
+  font-size: 12px !important;
+}
+
+span svg {
+  cursor: pointer;
+}
+
+span svg[data-icon="eye"] {
+  color: blue;
+}
+
+span svg[data-icon="edit"] {
+  color: green;
+}
+span svg[data-icon="trash"] {
+  color: red;
+}
+span svg[data-icon="eye"]:hover {
+  color: darkblue;
+}
+
+span svg[data-icon="edit"]:hover {
+  color: darkgreen;
+}
+
+span svg[data-icon="trash"]:hover {
+  color: darkred;
+}
