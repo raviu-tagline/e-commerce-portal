@@ -23,6 +23,8 @@ server.use(
   })
 );
 
+console.log('server started...')
+
 server.post("/", (req, res) => {
   console.log("Hello World");
 });
