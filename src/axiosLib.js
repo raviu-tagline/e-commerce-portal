@@ -30,7 +30,7 @@ const axiosApi = (method, apiUrl, data, isToken) =>
           message: response.statusText,
         });
       })
-      .catch((error) => reject(error));
+      .catch((error) => { return reject(error) });
   });
 
 export default axiosApi;

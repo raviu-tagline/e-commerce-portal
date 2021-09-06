@@ -18,6 +18,7 @@ const Home = (param) => {
   const [page, setPage] = useState(1);
   const [loader, setLoader] = useState(true);
   const [hasNext, setNext] = useState(true);
+  const [mode, setMode] = useState("onLine");
   const limit = 12;
 
   const cartData = useSelector((state) => state.cartData);
@@ -35,9 +36,11 @@ const Home = (param) => {
     );
 
     if (response.statusCode === 200 && response.data.length !== 0) {
+      localStorage.setItem("home", JSON.stringify(response.data));
       setDataArr([...dataArr, ...response.data]);
       setLoader(false);
     } else {
+      console.log(`response`, response);
       setLoader(false);
       setNext(false);
     }
