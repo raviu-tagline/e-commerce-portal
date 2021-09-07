@@ -1,10 +1,11 @@
 const jsonServer = require("json-server");
+const admin = require('firebase-admin')
 const server = jsonServer.create();
 // const path = require('path')
 // const express = require("express");
 const bodyParser = require("body-parser");
 // const app = express();
-const router = jsonServer.router("db.json");
+const router = jsonServer.router("https://firebasestorage.googleapis.com/v0/b/e-commerce-portal-ae2a3.appspot.com/o/db.json?alt=media&token=c3446fa4-e621-4bd5-a4be-701d32122638");
 const fs = require("fs");
 const cors = require("cors");
 const middlewares = jsonServer.defaults();
