@@ -1,4 +1,6 @@
 const jsonServer = require("json-server");
+const admin = require('firebase-admin')
+
 const server = jsonServer.create();
 // const path = require('path')
 // const express = require("express");
