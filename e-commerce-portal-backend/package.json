@@ -4,7 +4,7 @@
   "description": "Run json-server --watch db.json. Go to localhost:3000 on your browser.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "deploy": "git push https://git.heroku.com/galileo-viz.git"
   },
   "keywords": [
@@ -19,7 +19,6 @@
     "firebase-admin": "^9.11.1",
     "json-server": "^0.16.2",
     "mongodb": "^3.6.8",
-    "nodemon": "^2.0.12",
     "path": "^0.12.7"
   }
 }
