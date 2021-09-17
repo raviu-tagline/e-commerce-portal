@@ -48,12 +48,10 @@ const Cart = () => {
   const handleClick = async (cartData) => {
     if (localStorage.getItem("user-info")) {
       userData = JSON.parse(localStorage.getItem("user-info"));
-      console.log(`response`, ids);
-
       cartData.forEach((ele) => {
         axiosApi(
           "delete",
-          process.env.REACT_APP_LOCAL_API_URL + "Cart/" + ele.id
+          process.env.REACT_APP_LOCAL_API_URL + "cart/" + ele.id
         );
       });
       toast.success("Purchase done");
@@ -89,7 +87,7 @@ const Cart = () => {
                         key={val.id}
                         component="cart"
                         header={val.header}
-                        image={"images/cart_images/" + val.image}
+                        image={`${val.image}`}
                         content={val.content}
                         price={val.price}
                         actualPrice={val.actualPrice}

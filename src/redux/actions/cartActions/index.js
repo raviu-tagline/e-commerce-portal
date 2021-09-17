@@ -84,7 +84,7 @@ export const removeFromCartAction =
 const fetchApiFunction = async (method, param = [], id = "") => {
   let data = await axiosApi(
     method,
-    process.env.REACT_APP_LOCAL_API_URL + "Cart/" + id,
+    process.env.REACT_APP_LOCAL_API_URL + "cart/" + id,
     param,
     false
   );
