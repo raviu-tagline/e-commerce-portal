@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import MainHeader from "./reusableComponents/headers/mainHeader";
@@ -19,20 +20,20 @@ const ProtectedRoute = (props) => {
     }
   }, []);
   return (
-    <>
+    <React.Fragment>
       <MainHeader />
       {path == "/" ? (
-        <>
+        <React.Fragment>
           <Cmp />
-        </>
+        </React.Fragment>
       ) : (
-        <>
+        <React.Fragment>
           <NavSidebar />
           <Cmp />
-        </>
+        </React.Fragment>
       )}
       <Footer />
-    </>
+    </React.Fragment>
   );
 };
 

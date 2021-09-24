@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import axiosApi from "../axiosLib";
 import Links from "./Links";
@@ -38,7 +39,7 @@ const Register = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <div className="container">
         <div className="container-fluid col-6 mt-5">
           <div className="card">
@@ -57,7 +58,7 @@ const Register = () => {
         </div>
         {changePath && <History path={path} />}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

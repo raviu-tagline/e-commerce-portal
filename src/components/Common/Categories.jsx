@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { faEdit, faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
@@ -48,7 +49,7 @@ const Categories = () => {
     }
   }, []);
   return (
-    <>
+    <React.Fragment>
       <div className="container mx-auto justify-content-center">
         <div className="container-fluid">
           <div className="card mt-5 shadow">
@@ -98,7 +99,7 @@ const Categories = () => {
                       </tr>
                     ))
                   ) : (
-                    <>
+                    <React.Fragment>
                       <td
                         colSpan="5"
                         style={{
@@ -108,7 +109,7 @@ const Categories = () => {
                       >
                         No data found
                       </td>
-                    </>
+                    </React.Fragment>
                   )}
                 </tbody>
               </Table>
@@ -123,15 +124,15 @@ const Categories = () => {
         <Modal.Body>
           {
             data && console.log(`data`, Object.keys(data))
-            /* <>
+            /* <React.Fragment>
             //   <h2>Name: {data.name}</h2>
             //   <h4>Number of products: {data.productCount}</h4>
             //   <img src={"/images/category_images/" + data.imageName} />
-            // </>*/
+            // </React.Fragment>*/
           }
         </Modal.Body>
       </Modal>
-    </>
+    </React.Fragment>
   );
 };
 

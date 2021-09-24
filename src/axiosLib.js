@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
@@ -8,7 +9,7 @@ const axiosApi = (method, apiUrl, data, isToken) =>
     let headers = {
       "Content-Type": "application/json",
     };
-    const history = useHistory;
+    // const history = useHistory;
     if (isToken) {
       headers["access-token"] = localStorage.getItem("token");
     }

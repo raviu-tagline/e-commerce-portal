@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   faAngleLeft,
   faAngleRight,
@@ -112,7 +113,7 @@ const Users = () => {
     setCurrentPage(current + 1);
   };
   return (
-    <>
+    <React.Fragment>
       <div className="container mx-auto justify-content-center">
         <div className="container-fluid">
           <div className="card mt-5 shadow">
@@ -139,7 +140,7 @@ const Users = () => {
                     userDetails.map((item, i) => (
                       <tr>
                         {item.role != "admin" ? (
-                          <>
+                          <React.Fragment>
                             <td>{current === 1 ? i + 1 : lastIndex + i}</td>
                             <td>{item.name}</td>
                             <td>{item.age}</td>
@@ -147,7 +148,7 @@ const Users = () => {
                             <td>{item.email}</td>
                             <td>{item.role}</td>
                             {userInfo && userInfo.role == "admin" && (
-                              <>
+                              <React.Fragment>
                                 <td>
                                   <span onClick={() => showDetails(item.id)}>
                                     <FontAwesomeIcon icon={faEye} />
@@ -163,9 +164,9 @@ const Users = () => {
                                     <FontAwesomeIcon icon={faTrash} />
                                   </span>
                                 </td>
-                              </>
+                              </React.Fragment>
                             )}
-                          </>
+                          </React.Fragment>
                         ) : (
                           ""
                         )}
@@ -278,11 +279,11 @@ const Users = () => {
         </Modal.Header>
         <Modal.Body>
           {data && (
-            <>
+            <React.Fragment>
               <h2>{data.name}</h2>
               <h4>{data.email}</h4>
               <h4>{data.role}</h4>
-            </>
+            </React.Fragment>
           )}
         </Modal.Body>
       </Modal>
@@ -293,15 +294,16 @@ const Users = () => {
         </Modal.Header>
         <Modal.Body>
           {data && (
-            <>
+            <React.Fragment>
               <h2>{data.name}</h2>
               <h4>{data.email}</h4>
               <h4>{data.role}</h4>
-            </>
+            </React.Fragment>
           )}
         </Modal.Body>
       </Modal> */}
-    </>
+      {/* </React.Fragment> */}
+    </React.Fragment>
   );
 };
 export default memo(Users);

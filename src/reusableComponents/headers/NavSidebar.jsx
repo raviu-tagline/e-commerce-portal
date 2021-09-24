@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
 import { Component } from "react";
@@ -43,7 +44,7 @@ export default class NavSidebar extends Component {
   }
   render() {
     return (
-      <>
+      <React.Fragment>
         <SidebarComponent
           id="default-sidebar"
           ref={(Sidebar) => (this.sidebarobj = Sidebar)}
@@ -79,7 +80,7 @@ export default class NavSidebar extends Component {
               </Link>
             </li>
             {this.state.role == "admin" ? (
-              <>
+              <React.Fragment>
                 <li>
                   <Link to="/admin/add-user">
                     <span className="e-text">
@@ -144,12 +145,12 @@ export default class NavSidebar extends Component {
                     </span>
                   </Link>
                 </li>
-              </>
+              </React.Fragment>
             ) : (
               ""
             )}
             {this.state.role == "supplier" ? (
-              <>
+              <React.Fragment>
                 <li>
                   <a href="#">
                     <span className="e-text"> Inbox 4</span>
@@ -165,12 +166,12 @@ export default class NavSidebar extends Component {
                     <span className="e-text"> Inbox 6</span>
                   </a>
                 </li>
-              </>
+              </React.Fragment>
             ) : (
               ""
             )}
             {this.state.role == "customer" ? (
-              <>
+              <React.Fragment>
                 <li>
                   <a href="#">
                     <span className="e-text"> Inbox 7</span>
@@ -191,13 +192,13 @@ export default class NavSidebar extends Component {
                     <span className="e-text"> Inbox 10</span>
                   </a>
                 </li>
-              </>
+              </React.Fragment>
             ) : (
               ""
             )}
           </ul>
         </SidebarComponent>
-      </>
+      </React.Fragment>
     );
   }
 }

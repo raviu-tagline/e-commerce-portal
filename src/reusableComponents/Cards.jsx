@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { memo, useState } from "react";
@@ -7,7 +8,7 @@ import { removeFromCartAction } from "../redux/actions/cartActions";
 
 const Cards = (props) => {
   return (
-    <>
+    <React.Fragment>
       <Card>
         {console.log(`props.image`, props.image)}
         <Card.Header>{props.header}</Card.Header>
@@ -23,7 +24,7 @@ const Cards = (props) => {
           <Card.Body className={props.component == "cart" ? "col-sm-8" : ""}>
             <Card.Text>{props.content}</Card.Text>
             {props.component == "cart" ? (
-              <>
+              <React.Fragment>
                 <Card.Text>Price: ${props.price}</Card.Text>
                 <div className="row pt-2 ml-0">
                   <Button
@@ -54,9 +55,9 @@ const Cards = (props) => {
                     <FontAwesomeIcon icon={faTrash} />
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             ) : (
-              <>
+              <React.Fragment>
                 <Button
                   variant="primary"
                   id={props.id}
@@ -65,12 +66,12 @@ const Cards = (props) => {
                 >
                   Buy ${props.price}
                 </Button>
-              </>
+              </React.Fragment>
             )}
           </Card.Body>
         </div>
       </Card>
-    </>
+    </React.Fragment>
   );
 };
 

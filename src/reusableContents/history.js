@@ -8,7 +8,7 @@ const History = (props) => {
     history.push(props.path);
   }, []);
 
-  return <></>;
+  return <React.Fragment></React.Fragment>;
 };
 
 export default History;

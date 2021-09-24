@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavLink, Button } from "react-bootstrap";
@@ -21,7 +22,7 @@ const MainHeader = () => {
   if (localStorage.getItem("user-info")) {
     const userData = JSON.parse(localStorage.getItem("user-info"));
     RenderComp = (
-      <>
+      <React.Fragment>
         <Nav.Link>
           <Link to={"/" + userData.role + "/dashboard"}>
             <img src="/images/default-avtar.png" className="profile-image" />
@@ -33,11 +34,11 @@ const MainHeader = () => {
             </Button>
           </Link>
         </Nav.Link>
-      </>
+      </React.Fragment>
     );
   } else {
     RenderComp = (
-      <>
+      <React.Fragment>
         <Nav.Link>
           <Link to="/login">
             <Button variant="outline-info" onClick={handleClick}>
@@ -46,11 +47,11 @@ const MainHeader = () => {
             </Button>
           </Link>
         </Nav.Link>
-      </>
+      </React.Fragment>
     );
   }
   return (
-    <>
+    <React.Fragment>
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">
           <img
@@ -67,7 +68,7 @@ const MainHeader = () => {
         </Navbar.Collapse>
       </Navbar>
       {changePath && <History path={path} />}
-    </>
+    </React.Fragment>
   );
 };
 

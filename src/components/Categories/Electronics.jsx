@@ -14,8 +14,8 @@ export const Electronics = () => {
     fetchElectronicsData();
   }, []);
   return (
-    <>
+    <React.Fragment>
       <h1>Electronics</h1>
-    </>
+    </React.Fragment>
   );
 };

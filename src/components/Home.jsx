@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -79,7 +80,7 @@ const Home = (param) => {
     }
   };
   return (
-    <>
+    <React.Fragment>
       <MainHeader />
       <NavBar />
       <div className="container">
@@ -112,7 +113,7 @@ const Home = (param) => {
         <div className="row">
           {dataArr !== undefined
             ? dataArr.map((val, ind) => (
-                <>
+                <React.Fragment>
                   <div className="col-sm-3 p-3">
                     <Cards
                       component="home"
@@ -124,7 +125,7 @@ const Home = (param) => {
                       AddItem={AddItem}
                     />
                   </div>
-                </>
+                </React.Fragment>
               ))
             : ""}
           {loader && <Loader />}
@@ -135,7 +136,7 @@ const Home = (param) => {
           )}
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

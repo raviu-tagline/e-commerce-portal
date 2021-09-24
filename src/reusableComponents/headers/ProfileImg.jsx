@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProfileImg = (props) => {
-  return <></>;
+  return <React.Fragment></React.Fragment>;
 };
 
 export default ProfileImg;

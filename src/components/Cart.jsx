@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axiosApi from "../axiosLib";
@@ -68,7 +69,7 @@ const Cart = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <MainHeader />
       <div className="col-12 row mt-3">
         <div
@@ -81,7 +82,7 @@ const Cart = () => {
             {cartData &&
               cartData.map((val) => {
                 return (
-                  <>
+                  <React.Fragment>
                     <div className="pt-3">
                       <Cards
                         key={val.id}
@@ -99,7 +100,7 @@ const Cart = () => {
                         user={val.user}
                       />
                     </div>
-                  </>
+                  </React.Fragment>
                 );
               })}
           </div>
@@ -140,7 +141,7 @@ const Cart = () => {
         </div>
         {changePath && <History path={path} />}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

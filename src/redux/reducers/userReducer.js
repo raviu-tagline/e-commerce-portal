@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   GET_USERS,
   DELETE_USER,

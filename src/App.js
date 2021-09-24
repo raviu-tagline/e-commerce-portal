@@ -1,5 +1,7 @@
+/* eslint-disable */
 import "./App.css";
 import "./style.css";
+import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";

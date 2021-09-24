@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { toast } from "react-toastify";
 import axiosApi from "../../../axiosLib";
 import {
@@ -8,7 +9,7 @@ import {
 } from "../../constants";
 
 export const getCartDataAction = (params) => async (dispatch, getState) => {
-  const state = getState();
+  // const state = getState();
   let data;
   let response = await fetchApiFunction("get");
   if (response.statusCode === 200) {

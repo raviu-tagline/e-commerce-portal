@@ -1,3 +1,5 @@
+/* eslint-disable */
+import React from "react";
 import { useForm } from "react-hook-form";
 import { Form, Input } from "reactstrap";
 // import yupValidation from "../reusableContents/yupValidation";
@@ -8,7 +10,7 @@ import { Form, Input } from "reactstrap";
 //   }
 
 const Forms = ({ content, onSubmit, isUpdate }) => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit /* , errors */ } = useForm();
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -33,9 +35,9 @@ const Forms = ({ content, onSubmit, isUpdate }) => {
               aria-describedby={s.name}
             />
             {s.type == "radio" ? (
-              <>
+              <React.Fragment>
                 <label className="form-check-label">{s.value}</label>
-              </>
+              </React.Fragment>
             ) : (
               ""
             )}

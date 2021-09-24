@@ -2,7 +2,7 @@ import React from "react";
 
 const AdminDash = () => {
   return (
-    <>
+    <React.Fragment>
       <div className="container mt-5">
         <div className="container-fluid">
           <div className="row">
@@ -37,7 +37,7 @@ const AdminDash = () => {
           </div>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

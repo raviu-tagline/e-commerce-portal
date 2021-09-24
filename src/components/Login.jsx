@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import axiosApi from "../axiosLib";
 import loginDesign from "../reusableContents/loginDesign";
@@ -55,7 +56,7 @@ const Login = (props) => {
     }
   }, []);
   return (
-    <>
+    <React.Fragment>
       <div className="container">
         <div className="container-fluid col-6 mt-5">
           <div className="card shadow">
@@ -81,7 +82,7 @@ const Login = (props) => {
         </div>
         {changePath && <History path={path} />}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

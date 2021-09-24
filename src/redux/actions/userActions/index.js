@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axiosApi from "../../../axiosLib";
 import {
   ADD_USER,
@@ -27,12 +28,12 @@ export const getUserDetails = (page, limit) => async (dispatch, getState) => {
   const response = await axiosApi(
     "get",
     process.env.REACT_APP_LOCAL_API_URL +
-      "register" +
-      "?id_ne=1&_page=" +
-      page +
-      "&_limit=" +
-      limit +
-      "&_sort=role&_order=desc"
+    "register" +
+    "?id_ne=1&_page=" +
+    page +
+    "&_limit=" +
+    limit +
+    "&_sort=role&_order=desc"
   );
 
   if (response.statusCode === 200) {

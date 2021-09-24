@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import {
@@ -39,7 +40,7 @@ const NavBar = () => {
     getSubCategories();
   }, []);
   return (
-    <>
+    <React.Fragment>
       <Navbar expand="lg" className="flex-column">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
@@ -49,13 +50,13 @@ const NavBar = () => {
             </Nav.Link>
             {categories !== undefined
               ? categories.map((value, index) => (
-                  <>
+                  <React.Fragment>
                     <Nav.Link
                       href={
                         "/" +
                         value.name
                           .replace(
-                            /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/,
+                            /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<React.Fragment>\/?~]/,
                             "-"
                           )
                           .toLowerCase()
@@ -63,19 +64,19 @@ const NavBar = () => {
                     >
                       <strong> {value.name}</strong>
                     </Nav.Link>
-                  </>
+                  </React.Fragment>
                 ))
               : ""}
             <NavDropdown title="All sub categories" id="basic-nav-dropdown">
               {subCategories !== undefined
                 ? subCategories.map((value, index) => (
-                    <>
+                    <React.Fragment>
                       <NavDropdown.Item
                         href={
                           "/" +
                           value.name
                             .replace(
-                              /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/,
+                              /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<React.Fragment>\/?~]/,
                               "-"
                             )
                             .toLowerCase()
@@ -83,7 +84,7 @@ const NavBar = () => {
                       >
                         {value.name}
                       </NavDropdown.Item>
-                    </>
+                    </React.Fragment>
                   ))
                 : ""}
             </NavDropdown>
@@ -91,7 +92,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Navbar>
       <hr />
-    </>
+    </React.Fragment>
   );
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 
 const Profile = () => {
@@ -14,7 +15,7 @@ const Profile = () => {
   console.log(`userinfo`, userInfo);
 
   return (
-    <>
+    <React.Fragment>
       <div className="container mt-5">
         <div className="card shadow p-3">
           <div className="row">
@@ -33,7 +34,7 @@ const Profile = () => {
               <table style={{ width: "inherit", height: "100%" }}>
                 <tbody>
                   {userInfo && (
-                    <>
+                    <React.Fragment>
                       <tr>
                         <td>Name</td>
                         <td className="">{userInfo.name}</td>
@@ -58,7 +59,7 @@ const Profile = () => {
                         <td>Role</td>
                         <td className="">{userInfo.role}</td>
                       </tr>
-                    </>
+                    </React.Fragment>
                   )}
                 </tbody>
               </table>
@@ -66,7 +67,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
