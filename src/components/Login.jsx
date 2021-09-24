@@ -7,6 +7,7 @@ import Links from "./Links";
 import { Redirect } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { signInWithGoogle } from "../assets/firebase";
 
 const Login = (props) => {
   const [changePath, setChangePath] = useState(false);
@@ -37,6 +38,15 @@ const Login = (props) => {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithGoogle();
+      console.log(`result`, result);
+    } catch (error) {
+      console.log(`error`, error);
+    }
+  };
+
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       const useData = JSON.parse(localStorage.getItem("user-info"));
@@ -55,13 +65,17 @@ const Login = (props) => {
             <div className="card-body">
               <Forms content={loginDesign} onSubmit={(e) => onSubmit(e)} />
               <hr />
-              <p className="text-center">
-                <div className="btn btn-success">
-                  <Links to="/create">
-                    <strong>Create new account</strong>
-                  </Links>
-                </div>
-              </p>
+              <button
+                className="btn btn-primary w-100"
+                onClick={() => handleGoogleLogin()}
+              >
+                Login with google
+              </button>
+              <div className="btn btn-success text-center">
+                <Links to="/create">
+                  <strong>Create new account</strong>
+                </Links>
+              </div>
             </div>
           </div>
         </div>

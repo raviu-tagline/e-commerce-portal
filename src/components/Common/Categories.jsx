@@ -13,7 +13,7 @@ const Categories = () => {
   const showDetails = async (id) => {
     let response = await axiosApi(
       "get",
-      process.env.REACT_APP_LOCAL_API_URL + "Category/" + id
+      process.env.REACT_APP_LOCAL_API_URL + "category/" + id
     );
 
     if (response.statusCode === 200) {
@@ -37,7 +37,7 @@ const Categories = () => {
   useEffect(async () => {
     let response = await axiosApi(
       "get",
-      process.env.REACT_APP_LOCAL_API_URL + "Category"
+      process.env.REACT_APP_LOCAL_API_URL + "category"
     );
 
     if (response.statusCode === 200) {

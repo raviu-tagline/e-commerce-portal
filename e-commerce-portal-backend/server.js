@@ -1,4 +1,5 @@
 const jsonServer = require("json-server");
+
 const server = jsonServer.create();
 // const path = require('path')
 // const express = require("express");
@@ -9,10 +10,17 @@ const fs = require("fs");
 const cors = require("cors");
 const middlewares = jsonServer.defaults();
 const port = 3009;
+const mongoose = require('mongoose')
 server.use(jsonServer.bodyParser);
 // server.use(bodyParser.urlencoded({ extended: false }));
 // server.use(bodyParser.json());
 // server.use(bodyParser.json({ type: "application/*+json" }));
+
+mongoose.connect("mongodb+srv://Ravi_Undaviya:Ravi1999@cluster0.92uzh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+
+mongoose.connection.once('open', () => {
+  console.log(`Connected to database`);
+})
 
 server.use(
   cors({

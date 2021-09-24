@@ -2,14 +2,25 @@ const Express = require("express");
 const BodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
+const cors = require("cors");
 const CONNECTION_URL =
-  "mongodb+srv://Ravi_Undaviya:sXIzSQndhlDB1ccK@cluster0.92uzh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://Ravi_Undaviya:Ravi1999@cluster0.92uzh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const DATABASE_NAME = "eCommerceDb";
 
 var app = Express();
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 var database, collection;
+
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+    preflightContinue: false,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    optionsSuccessStatus: true
+  })
+);
 
 app.listen(5000, () => {
   MongoClient.connect(

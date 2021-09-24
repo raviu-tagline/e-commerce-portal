@@ -16,7 +16,7 @@ const NavBar = () => {
     async function getCategories() {
       response = await axiosApi(
         "get",
-        process.env.REACT_APP_LOCAL_API_URL + "Category"
+        process.env.REACT_APP_LOCAL_API_URL + "category"
       );
 
       if (response.statusCode === 200) {
@@ -27,7 +27,7 @@ const NavBar = () => {
     async function getSubCategories() {
       response = await axiosApi(
         "get",
-        process.env.REACT_APP_LOCAL_API_URL + "SubCategory"
+        process.env.REACT_APP_LOCAL_API_URL + "subCategory"
       );
 
       if (response.statusCode === 200) {

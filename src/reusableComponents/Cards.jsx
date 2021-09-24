@@ -9,6 +9,7 @@ const Cards = (props) => {
   return (
     <>
       <Card>
+        {console.log(`props.image`, props.image)}
         <Card.Header>{props.header}</Card.Header>
         <div className={props.component == "cart" ? "row" : ""}>
           <Card.Img

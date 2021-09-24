@@ -109,7 +109,7 @@
       "id": 22
     }
   ],
-  "Currency": [
+  "currency": [
     {
       "AED": "United Arab Emirates Dirham",
       "AFN": "Afghan Afghani",
@@ -284,33 +284,47 @@
       "ZWL": "Zimbabwean Dollar"
     }
   ],
-  "Cart": [
-    {
-      "component": "home",
-      "header": "Corporis",
-      "image": "images/product_images/931x785.png",
-      "content": "Nam incidunt blanditiis odio inventore. Nobis voluptatum quibusdam laboriosam a numquam. Delectus sequi ipsa possimus ratione repellendus quibusdam. Molestiae fuga laudantium natus dolorem.",
-      "price": 271,
-      "id": 202
-    },
+  "cart": [
     {
       "component": "home",
       "header": "Nulla",
       "image": "images/product_images/931x785.png",
       "content": "Fault but do not fall for it, but I want of exercise. Find fault with her, acted as a wearisome toil, and a resultant was invented. At times the extremely deserving. Our results for the presence of corruption.",
       "price": 207,
-      "id": 201
+      "id": 201,
+      "count": 1,
+      "actualPrice": 207,
+      "user": {
+        "id": 1,
+        "name": "Ravi",
+        "age": 55,
+        "number": 8989898989,
+        "email": "admin@admin.com",
+        "password": "",
+        "role": "admin"
+      }
     },
     {
       "component": "home",
-      "header": "Minus",
+      "header": "Corporis",
       "image": "images/product_images/931x785.png",
-      "content": "Quod reiciendis aspernatur ipsum cum debitis. Quisquam tempore doloremque quo ipsum ipsa tempora. Dignissimos qui ex ad facilis. Quo sequi recusandae eveniet autem ducimus nam.",
-      "price": 295,
-      "id": 203
+      "content": "Nam incidunt blanditiis odio inventore. Nobis voluptatum quibusdam laboriosam a numquam. Delectus sequi ipsa possimus ratione repellendus quibusdam. Molestiae fuga laudantium natus dolorem.",
+      "price": 271,
+      "id": 202,
+      "count": 1,
+      "actualPrice": 271,
+      "user": {
+        "id": 1,
+        "name": "Ravi",
+        "age": 55,
+        "number": 8989898989,
+        "email": "admin@admin.com",
+        "password": "",
+        "role": "admin"
+      }
     }
   ],
-  "Category": [
+  "category": [
     {
       "id": 1,
       "name": "Electronic",
@@ -354,7 +368,7 @@
       "imageName": "931x785.png"
     }
   ],
-  "SubCategory": [
+  "subCategory": [
     {
       "id": 101,
       "name": "Television",
@@ -426,7 +440,7 @@
       "categoryId": 7
     }
   ],
-  "Product": [
+  "product": [
     {
       "id": 201,
       "name": "Nulla",
